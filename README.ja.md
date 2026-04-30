@@ -242,7 +242,7 @@ from toio import *
 async def scan_and_connect():
     dev_list = await BLEScanner.scan_registered_cubes(num=1)
     assert len(dev_list)
-    cube = ToioCoreCube(dev_list[0])
+    cube = ToioCoreCube(dev_list[0].interface)
     await cube.connect()
 
     await asyncio.sleep(3)
@@ -490,5 +490,3 @@ async def scan_and_connect():
 if __name__ == "__main__":
     asyncio.run(scan_and_connect())
 ```
-
-
