@@ -155,6 +155,14 @@ Use `BLEScanner.scan()`.
 
 The argument is the number of cubes to find in the scan.
 
+`BLEScanner.scan()` supports `strategy="best"` and `strategy="quick"`.
+The default strategy is `"best"`.
+
+- `strategy="best"` scans until timeout, sorts the discovered cubes, and returns the top `N`.
+- `strategy="quick"` returns as soon as `N` cubes are found.
+
+You can also use `BLEScanner.scan_best()` and `BLEScanner.scan_quick()` explicitly.
+
 If the specified number of cubes are not found by the timeout (default value is 5 seconds), it returns a list of the number of cubes found at the time of the timeout.
 
 The following sample scans and connects nearby cubes.
@@ -167,7 +175,7 @@ import asyncio
 from toio import *
 
 async def scan_and_connect():
-    dev_list = await BLEScanner.scan(num=1)
+    dev_list = await BLEScanner.scan_quick(num=1)
     assert len(dev_list)
     cube = ToioCoreCube(dev_list[0].interface)
     await cube.connect()
@@ -490,4 +498,3 @@ async def scan_and_connect():
 if __name__ == "__main__":
     asyncio.run(scan_and_connect())
 ```
-
