@@ -153,6 +153,14 @@ if __name__ == "__main__":
 
 引数はスキャンで見つけるキューブの数です。
 
+`BLEScanner.scan()` は `strategy="best"` と `strategy="quick"` をサポートします。
+デフォルトの strategy は `"best"` です。
+
+- `strategy="best"` はタイムアウトまでスキャンし、見つかったキューブをソートして上位 `N` 台を返します。
+- `strategy="quick"` は `N` 台見つかった時点で返します。
+
+明示的に `BLEScanner.scan_best()` と `BLEScanner.scan_quick()` を使うこともできます。
+
 タイムアウト（デフォルト値は 5 秒）までに指定された数のキューブが見つからない場合は、タイムアウト時点で見つかった数のキューブのリストを返します。
 
 以下のサンプルでは、近くにあるキューブをスキャンして接続します。
@@ -165,7 +173,7 @@ import asyncio
 from toio import *
 
 async def scan_and_connect():
-    dev_list = await BLEScanner.scan(num=1)
+    dev_list = await BLEScanner.scan_quick(num=1)
     assert len(dev_list)
     cube = ToioCoreCube(dev_list[0].interface)
     await cube.connect()
