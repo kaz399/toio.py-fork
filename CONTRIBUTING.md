@@ -12,13 +12,13 @@ Before contributing to toio.py, please read our [Code of Conduct](./CODE_OF_COND
 2. Clone the toio.py repository
 
 ```
-git clone https://github.com/toio/toio.py
+git clone https://github.com/kaz399/toio.py-fork
 ```
 
 3. Run `poetry install` in toio.py repository
 
 ```
-cd toio.py
+cd toio.py-fork
 poetry install
 ```
 

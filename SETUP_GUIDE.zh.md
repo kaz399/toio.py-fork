@@ -44,7 +44,7 @@ python -m pip install bleak
 #### 安装toio.py软件包，命令如下：
 
 ```
-python -m pip install toio-py --upgrade
+python -m pip install toio-py-fork --upgrade
 ```
 
 #### ipykernel
@@ -90,7 +90,7 @@ ModuleNotFoundError: No module named 'toio.scanner'
 
 ## 运行教程
 
-在Visual Studio Code上导入“[tutorial.zh.py](https://github.com/toio/toio.py/releases/latest/download/tutorial.zh.py)”。
+在Visual Studio Code上导入“[tutorial.zh.py](https://github.com/kaz399/toio.py-fork/releases/latest/download/tutorial.zh.py)”。
 
 在实际执行代码时可以阅读该教程去使用Visual Studio Code的[代码单元功能](https://code.visualstudio.com/docs/python/jupyter-support-py#_jupyter-code-cell)
 
@@ -136,4 +136,4 @@ Visual Studio Code 具有单独执行文档中部分 Python 代码的能力（�
 
 # API 文件
 
-https://toio.github.io/toio.py/
+https://kaz399.github.io/toio.py-fork/

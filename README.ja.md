@@ -1,6 +1,11 @@
-# toio.py
+# toio.py-fork
 
-[![PyPI](https://img.shields.io/pypi/v/toio-py?color=00aeca)](https://pypi.org/project/toio-py/)
+> **注意**
+> このリポジトリは `toio.py` の独立した非公式 fork です。
+> オリジナルプロジェクトとは別にメンテナンスされており、Sony Interactive Entertainment Inc. および toio™ とは提携・承認・後援関係にありません。
+> オリジナルプロジェクトは https://github.com/toio/toio.py です。
+
+[![PyPI](https://img.shields.io/pypi/v/toio-py-fork?color=00aeca)](https://pypi.org/project/toio-py-fork/)
 
 これは Python から[toio コアキューブ](https://toio.io/platform/cube/)を制御するためのライブラリです。
 
@@ -34,7 +39,7 @@
 - iOS, iPadOS: 17
 
 toio.py は Pythonista3 上で動作します。  
-[インストール方法: INSTALL_TO_PYTHONISTA3.ja.md](https://toio.github.io/toio.py/INSTALL_TO_PYTHONISTA3.ja.html)
+[インストール方法: INSTALL_TO_PYTHONISTA3.ja.md](https://kaz399.github.io/toio.py-fork/INSTALL_TO_PYTHONISTA3.ja.html)
 
 
 ## セットアップとチュートリアル
@@ -58,7 +63,7 @@ toio.py は Pythonista3 上で動作します。
 
 ## API ドキュメント
 
-- [API ドキュメント](https://toio.github.io/toio.py/)
+- [API ドキュメント](https://kaz399.github.io/toio.py-fork/)
 
 ---
 

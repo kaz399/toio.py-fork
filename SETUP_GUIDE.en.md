@@ -58,7 +58,7 @@ python -m pip install bleak
 Execute the following command to install.
 
 ```
-python -m pip install toio-py --upgrade
+python -m pip install toio-py-fork --upgrade
 ```
 
 
@@ -107,7 +107,7 @@ Install the following Jupyter extensions from Microsoft
 
 ## Running the tutorial
 
-Download [tutorial.en.py](https://github.com/toio/toio.py/releases/latest/download/tutorial.en.py).
+Download [tutorial.en.py](https://github.com/kaz399/toio.py-fork/releases/latest/download/tutorial.en.py).
 Open `tutorial.py` on Visual Studio Code.
 
 The tutorial can be read while actually executing code using Visual Studio Code's [Code Cell feature](https://code.visualstudio.com/docs/python/jupyter-support-py#_jupyter-code-cell).
@@ -154,4 +154,4 @@ When other code cells are executed, the results of the execution of those code c
 
 # API document
 
-The API document is [here](https://toio.github.io/toio.py/).
+The API document is [here](https://kaz399.github.io/toio.py-fork/).

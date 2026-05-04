@@ -57,7 +57,7 @@ python -m pip install bleak
 #### toio.py
 
 ```
-python -m pip install toio-py --upgrade
+python -m pip install toio-py-fork --upgrade
 ```
 
 #### ipykernel
@@ -105,7 +105,7 @@ Python 機能拡張のインストールと同様の手順で、 `Jupyter` と�
 
 ## チュートリアルの実行
 
-[toio.py のチュートリアル tutorial.ja.py](https://github.com/toio/toio.py/releases/latest/download/tutorial.ja.py)
+[toio.py のチュートリアル tutorial.ja.py](https://github.com/kaz399/toio.py-fork/releases/latest/download/tutorial.ja.py)
 をダウンロードし、Visual Studio Code でチュートリアルを開きます
 
 チュートリアルは Visual Studio Code の [コードセル機能](https://code.visualstudio.com/docs/python/jupyter-support-py#_jupyter-code-cell)を使って、実際にコードを実行しながら読み進められるようになっています。
@@ -152,4 +152,4 @@ Visual Studio Code が Restricted Mode で動作している場合にはコー�
 
 # API ドキュメント
 
-自動生成したドキュメントは[こちら](https://toio.github.io/toio.py/)
+自動生成したドキュメントは[こちら](https://kaz399.github.io/toio.py-fork/)

@@ -1,6 +1,11 @@
-﻿# toio.py
+﻿# toio.py-fork
 
-[![PyPI](https://img.shields.io/pypi/v/toio-py?color=00aeca)](https://pypi.org/project/toio-py/)
+> **Note**
+> This repository is an independent, unofficial fork of `toio.py`.
+> It is maintained separately from the original project and is not affiliated with, endorsed by, or sponsored by Sony Interactive Entertainment Inc. or toio™.
+> The original project is available at https://github.com/toio/toio.py.
+
+[![PyPI](https://img.shields.io/pypi/v/toio-py-fork?color=00aeca)](https://pypi.org/project/toio-py-fork/)
 
 This is a library for controlling [toio™Core Cube](https://toio.io/platform/cube/) from Python.
 
@@ -36,7 +41,7 @@ Based on [toio Core Cube Specifications](https://toio.github.io/toio-spec/en/) v
 - iOS, iPadOS: 17
 
 toio.py works on Pythonista3.  
-[How to install: INSTALL_TO_PYTHONISTA3.en.md](https://toio.github.io/toio.py/INSTALL_TO_PYTHONISTA3.en.html)
+[How to install: INSTALL_TO_PYTHONISTA3.en.md](https://kaz399.github.io/toio.py-fork/INSTALL_TO_PYTHONISTA3.en.html)
 
 
 ## Setup and tutorial
@@ -60,7 +65,7 @@ See [SIMPLE_API.en.md](./SIMPLE_API.en.md) for information on the SimpleCube API
 
 ## API document
 
-- [API Document](https://toio.github.io/toio.py/)
+- [API Document](https://kaz399.github.io/toio.py-fork/)
 
 ---
 
