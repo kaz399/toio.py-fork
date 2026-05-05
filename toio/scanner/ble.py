@@ -91,7 +91,7 @@ class UniversalBleScanner(ScannerInterface):
             strategy (ScanStrategy, optional): Scan strategy. Defaults to "best".
 
         Returns:
-            List[Tuple[BLEDevice, AdvertisementData]]: List of found cubes.
+            List[CubeInfo]: List of found cubes.
         """
         return await self._scan(num=num, sort=sort, timeout=timeout, strategy=strategy)
 
@@ -125,7 +125,7 @@ class UniversalBleScanner(ScannerInterface):
             timeout (float, optional): Scan timeout. Defaults to DEFAULT_SCAN_TIMEOUT.
 
         Returns:
-            List[Tuple[BLEDevice, AdvertisementData]]: List of found cubes.
+            List[CubeInfo]: List of found cubes.
         """
         return await self._scan(cube_id=cube_id, sort=sort, timeout=timeout)
 
@@ -147,7 +147,7 @@ class UniversalBleScanner(ScannerInterface):
             timeout (float, optional): Scan timeout. Defaults to DEFAULT_SCAN_TIMEOUT.
 
         Returns:
-            List[Tuple[BLEDevice, AdvertisementData]]: List of found cubes.
+            List[CubeInfo]: List of found cubes.
         """
         return await self._scan(address=address, sort=sort, timeout=timeout)
 
@@ -169,7 +169,7 @@ class UniversalBleScanner(ScannerInterface):
             timeout (float, optional): Scan timeout. Defaults to DEFAULT_SCAN_TIMEOUT.
 
         Returns:
-            List[Tuple[BLEDevice, AdvertisementData]]: List of found cubes.
+            List[CubeInfo]: List of found cubes.
         """
         from ..scanner.platform.windows_ble import get_registered_cubes
 
@@ -199,7 +199,7 @@ class UniversalBleScanner(ScannerInterface):
             timeout (float, optional): Scan timeout. Defaults to DEFAULT_SCAN_TIMEOUT.
 
         Returns:
-            List[Tuple[BLEDevice, AdvertisementData]]: List of found cubes.
+            List[CubeInfo]: List of found cubes.
         """
         from ..scanner.platform.windows_ble import get_registered_cubes
 

@@ -3,6 +3,7 @@
 > **注意**
 > このリポジトリは `toio.py` の独立した非公式 fork です。
 > オリジナルプロジェクトとは別にメンテナンスされており、Sony Interactive Entertainment Inc. および toio™ とは提携・承認・後援関係にありません。
+> この fork 版での変更・修正は独自のものです。挙動、問題、サポートについて Sony Interactive Entertainment Inc. へ問い合わせないでください。
 > オリジナルプロジェクトは https://github.com/toio/toio.py です。
 
 [![PyPI](https://img.shields.io/pypi/v/toio-py-fork?color=00aeca)](https://pypi.org/project/toio-py-fork/)
@@ -83,6 +84,22 @@ ToioCoreCube は[toio コアキューブ技術仕様](https://toio.github.io/toi
 ToioCoreCubeクラスは基本的な Scanner の機能を持ち、Scanner を使わなくてもキューブの探索と接続が行えるようになりました。  
 複雑な設定でのキューブの探索には Scanner を使ってください。
 
+この fork では、Scanner が返す `CubeInfo` または `CubeInterface` のどちらでも
+`ToioCoreCube` を初期化できます。
+これは [toio/toio.py#14](https://github.com/toio/toio.py/issues/14) で報告された、
+説明文では `CubeInfo` で初期化できると読める一方で、実際には `CubeInfo` 自体を
+cube interface として扱ってしまい `connect()` に失敗する問題への修正です。
+
+`CubeInfo` を渡した場合、`ToioCoreCube` は `CubeInfo.interface` を実際の制御用
+interface として使います。`name` を明示しない場合は `CubeInfo.name` を cube name
+として使います。
+
+```Python
+dev_list = await BLEScanner.scan_quick(num=1)
+cube = ToioCoreCube(dev_list[0])
+await cube.connect()
+```
+
 ### Scanner
 
 BLE インターフェース経由でキューブを探索するためのクラスです。
@@ -161,10 +178,31 @@ if __name__ == "__main__":
 `BLEScanner.scan()` は `strategy="best"` と `strategy="quick"` をサポートします。
 デフォルトの strategy は `"best"` です。
 
-- `strategy="best"` はタイムアウトまでスキャンし、見つかったキューブをソートして上位 `N` 台を返します。
-- `strategy="quick"` は `N` 台見つかった時点で返します。
+- `strategy="best"` は電波強度の高い候補を優先したい場合に使います。timeout まで
+  scan を続け、見つかった cube を sort して上位 `N` 台を返します。これは従来の
+  `BLEScanner.scan(num=N)` の動作を維持する strategy です。
+- `strategy="quick"` は RSSI による候補選択よりも起動の速さを優先したい場合に使います。
+  `N` 台の cube が見つかった時点で scan を終了して返します。
 
 明示的に `BLEScanner.scan_best()` と `BLEScanner.scan_quick()` を使うこともできます。
+
+この option は [toio/toio.py#15](https://github.com/toio/toio.py/issues/15) に対する
+修正として追加しました。この issue では、cube ID や BLE address を指定した scan は
+対象がすべて見つかった時点で終了する一方、`scan(num=N)` は常に timeout まで待つことが
+指摘されています。この fork では、timeout まで待つ従来動作を `best` として残し、
+早期終了する動作を `quick` として追加しています。
+
+```Python
+# Prefer RSSI-ranked candidates. This waits until timeout.
+dev_list = await BLEScanner.scan(num=2, strategy="best")
+
+# Prefer fast startup. This returns after two cubes are found.
+dev_list = await BLEScanner.scan(num=2, strategy="quick")
+
+# Helper methods equivalent to the explicit strategy values.
+best_list = await BLEScanner.scan_best(num=2)
+quick_list = await BLEScanner.scan_quick(num=2)
+```
 
 タイムアウト（デフォルト値は 5 秒）までに指定された数のキューブが見つからない場合は、タイムアウト時点で見つかった数のキューブのリストを返します。
 
@@ -180,7 +218,7 @@ from toio import *
 async def scan_and_connect():
     dev_list = await BLEScanner.scan_quick(num=1)
     assert len(dev_list)
-    cube = ToioCoreCube(dev_list[0].interface)
+    cube = ToioCoreCube(dev_list[0])
     await cube.connect()
 
     await asyncio.sleep(3)
@@ -217,7 +255,7 @@ from toio import *
 async def scan_and_connect():
     dev_list = await BLEScanner.scan_with_id(cube_id={"C7f"})
     assert len(dev_list)
-    cube = ToioCoreCube(dev_list[0].interface)
+    cube = ToioCoreCube(dev_list[0])
     await cube.connect()
 
     await asyncio.sleep(3)
@@ -255,7 +293,7 @@ from toio import *
 async def scan_and_connect():
     dev_list = await BLEScanner.scan_registered_cubes(num=1)
     assert len(dev_list)
-    cube = ToioCoreCube(dev_list[0].interface)
+    cube = ToioCoreCube(dev_list[0])
     await cube.connect()
 
     await asyncio.sleep(3)
@@ -305,7 +343,7 @@ import asyncio
 
 from toio import *
 
-# 通知ハンドラ
+# Notification handler
 def notification_handler(payload: bytearray):
     id_info = IdInformation.is_my_data(payload)
     print(str(id_info))
@@ -365,7 +403,7 @@ import asyncio
 
 from toio import *
 
-# 通知ハンドラ
+# Notification handler
 def notification_handler(payload: bytearray):
     id_info = Motor.is_my_data(payload)
     print(str(id_info))

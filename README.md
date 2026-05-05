@@ -3,6 +3,7 @@
 > **Note**
 > This repository is an independent, unofficial fork of `toio.py`.
 > It is maintained separately from the original project and is not affiliated with, endorsed by, or sponsored by Sony Interactive Entertainment Inc. or toio™.
+> The changes and fixes in this fork are independent modifications; do not contact Sony Interactive Entertainment Inc. about their behavior, issues, or support.
 > The original project is available at https://github.com/toio/toio.py.
 
 [![PyPI](https://img.shields.io/pypi/v/toio-py-fork?color=00aeca)](https://pypi.org/project/toio-py-fork/)
@@ -85,6 +86,23 @@ ToioCoreCube class includes basic scanner function.
 ToioCoreCube class can scan a toio Core Cube without the help of the Scanner class.
 For scanning in special settings. use the Scanner class.
 
+In this fork, `ToioCoreCube` can be initialized with either a `CubeInfo`
+returned by a scanner or a `CubeInterface`.
+This fixes the behavior reported in
+[toio/toio.py#14](https://github.com/toio/toio.py/issues/14), where the
+documentation described `CubeInfo` initialization but `connect()` failed
+because the `CubeInfo` object itself was used as the cube interface.
+
+When a `CubeInfo` is passed, `ToioCoreCube` uses `CubeInfo.interface` as the
+actual control interface. If `name` is not specified, `CubeInfo.name` is used
+as the cube name.
+
+```Python
+dev_list = await BLEScanner.scan_quick(num=1)
+cube = ToioCoreCube(dev_list[0])
+await cube.connect()
+```
+
 ### Scanner
 
 Class for scanning cubes via the BLE interface.
@@ -163,10 +181,32 @@ The argument is the number of cubes to find in the scan.
 `BLEScanner.scan()` supports `strategy="best"` and `strategy="quick"`.
 The default strategy is `"best"`.
 
-- `strategy="best"` scans until timeout, sorts the discovered cubes, and returns the top `N`.
-- `strategy="quick"` returns as soon as `N` cubes are found.
+- Use `strategy="best"` when you want the strongest candidates. It scans until
+  timeout, sorts the discovered cubes, and returns the top `N`. This preserves
+  the previous behavior of `BLEScanner.scan(num=N)`.
+- Use `strategy="quick"` when startup latency is more important than RSSI-based
+  candidate selection. It returns as soon as `N` cubes are found.
 
 You can also use `BLEScanner.scan_best()` and `BLEScanner.scan_quick()` explicitly.
+
+This option was added for
+[toio/toio.py#15](https://github.com/toio/toio.py/issues/15). The issue pointed
+out that `scan(num=N)` always waited for the full timeout, while scans by cube
+ID or BLE address terminated early after all requested cubes were found. This
+fork keeps the full-timeout behavior as `best` and adds `quick` for early
+termination.
+
+```Python
+# Prefer RSSI-ranked candidates. This waits until timeout.
+dev_list = await BLEScanner.scan(num=2, strategy="best")
+
+# Prefer fast startup. This returns after two cubes are found.
+dev_list = await BLEScanner.scan(num=2, strategy="quick")
+
+# Helper methods equivalent to the explicit strategy values.
+best_list = await BLEScanner.scan_best(num=2)
+quick_list = await BLEScanner.scan_quick(num=2)
+```
 
 If the specified number of cubes are not found by the timeout (default value is 5 seconds), it returns a list of the number of cubes found at the time of the timeout.
 
@@ -182,7 +222,7 @@ from toio import *
 async def scan_and_connect():
     dev_list = await BLEScanner.scan_quick(num=1)
     assert len(dev_list)
-    cube = ToioCoreCube(dev_list[0].interface)
+    cube = ToioCoreCube(dev_list[0])
     await cube.connect()
 
     await asyncio.sleep(3)
@@ -219,7 +259,7 @@ from toio import *
 async def scan_and_connect():
     dev_list = await BLEScanner.scan_with_id(cube_id={"C7f"})
     assert len(dev_list)
-    cube = ToioCoreCube(dev_list[0].interface)
+    cube = ToioCoreCube(dev_list[0])
     await cube.connect()
 
     await asyncio.sleep(3)
@@ -258,7 +298,7 @@ from toio import *
 async def scan_and_connect():
     dev_list = await BLEScanner.scan_registered_cubes(num=1)
     assert len(dev_list)
-    cube = ToioCoreCube(dev_list[0].interface)
+    cube = ToioCoreCube(dev_list[0])
     await cube.connect()
 
     await asyncio.sleep(3)
