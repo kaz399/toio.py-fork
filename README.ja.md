@@ -15,7 +15,7 @@
 ## 特徴
 
 - Bluetooth 通信に[bleak](https://github.com/hbldh/bleak)を使用
-- Python 3.8 以降のバージョンをサポート （Python 3.12 の使用を推奨）
+- Python 3.10 以降のバージョンをサポート （Python 3.14 の使用を推奨）
 - マルチプラットフォーム (Windows, Linux, macOS, iOS, iPadOS)
 - 専用のドングルが不要
 - toio コアキューブ技術仕様に基づいた非同期 API (ToioCoreCube API) と 簡単にキューブを制御するための同期 API (SimpleCube API) の 2 種類を用意
@@ -27,17 +27,16 @@
 
 ### 主な確認環境
 
-- Windows: Windows10 (22H2)
+- Linux: Ubuntu26.04
 
 ### 補助的な確認環境
 
-- Windows: Windows11 (23H2)
-- Linux: Ubuntu24.04
+- Windows: Windows11 (25H2)
 - macOS: macOS 14(Sonoma)
 
 ### 実験的な実装
 
-- iOS, iPadOS: 17
+- iOS, iPadOS: 17 (テスト未実施)
 
 toio.py は Pythonista3 上で動作します。  
 [インストール方法: INSTALL_TO_PYTHONISTA3.ja.md](https://kaz399.github.io/toio.py-fork/INSTALL_TO_PYTHONISTA3.ja.html)
