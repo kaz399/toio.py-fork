@@ -31,12 +31,12 @@
 
 ### 補助的な確認環境
 
-- Windows: Windows11 (25H2)
-- macOS: macOS 14(Sonoma)
+- Windows: Windows11 (25H2)  (動作未確認)
+- macOS: macOS 26(Tahoe)  (動作未確認)
 
 ### 実験的な実装
 
-- iOS, iPadOS: 17 (テスト未実施)
+- iOS, iPadOS: 26 (動作未確認)
 
 toio.py は Pythonista3 上で動作します。  
 [インストール方法: INSTALL_TO_PYTHONISTA3.ja.md](https://kaz399.github.io/toio.py-fork/INSTALL_TO_PYTHONISTA3.ja.html)

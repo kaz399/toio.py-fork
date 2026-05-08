@@ -33,12 +33,12 @@ Based on [toio Core Cube Specifications](https://toio.github.io/toio-spec/en/) v
 
 ### Secondary tested environment
 
-- Windows: Windows 11 (25H2)
-- macOS: macOS 14(Sonoma)
+- Windows: Windows 11 (25H2) (Planned support; functionality not verified)
+- macOS: macOS 26(Tahoe) (Planned support; functionality not verified)
 
 ### Experimental implementation
 
-- iOS, iPadOS: 17 (not tested)
+- iOS, iPadOS: 16 (Planned support; functionality not verified)
 
 toio.py works on Pythonista3.  
 [How to install: INSTALL_TO_PYTHONISTA3.en.md](https://kaz399.github.io/toio.py-fork/INSTALL_TO_PYTHONISTA3.en.html)

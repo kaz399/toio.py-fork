@@ -1,6 +1,6 @@
 [project]
 name = "toio-py-fork"
-version = "1.1.0.post1.dev1"
+version = "1.1.0.post1.dev2"
 description = "Unofficial maintained fork of toio.py for controlling toio Core Cube"
 authors = [
     {name = "Sony Interactive Entertainment"},
@@ -32,7 +32,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://toio.io/"
+Homepage = "https://github.com/kaz399/toio.py-fork"
 Documentation = "https://kaz399.github.io/toio.py-fork/"
 Repository = "https://github.com/kaz399/toio.py-fork"
 Issues = "https://github.com/kaz399/toio.py-fork/issues"
