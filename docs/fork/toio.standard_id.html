@@ -1,0 +1,890 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <meta name="docsearch:name" content="toio-py-fork" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#0DCAF0" />
+    
+    
+      <title>toio.standard_id module &mdash; toio-py-fork  documentation</title>
+    
+    <link rel="canonical" href="toio.standard_id" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-light.css?v=970f37b1" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/sphinx-nefertiti-default.min.css?v=88df5cc9" /><!-- add (1) -->
+        <link rel="index" title="Index" href="genindex.html" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="top" title="toio-py-fork  documentation" href="#" />
+        <link rel="up" title="toio package" href="toio.html" />
+        <link rel="next" title="toio.toio_uuid module" href="toio.toio_uuid.html" />
+        <link rel="prev" title="toio.position module" href="toio.position.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="index.html"
+             class="navbar-brand"
+          ><span class="brand-text">toio-py-fork</span><span class="brand-short-text">toio-py-fork</span></a>
+        
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">toio-py-fork</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+              
+              
+              
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "version.html" -->
+<h3>Versions</h3>
+<ul>
+  <li><a href="toio.standard_id.html">fork</a></li>
+</ul>
+
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <div><div class="d-flex flex-row justify-content-between">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Start</a></li>
+        <li class="breadcrumb-item"><a href="toio.html">toio package</a></li>
+      <li class="breadcrumb-item active" aria-current="page">toio.standard_id module</li>
+    </ol>
+  </nav>
+  
+    <div class="fs085">
+        <a href="_sources/toio.standard_id.rst.txt"  rel="nofollow" aria-label="Show source of this document"><i class="bi bi-file-earmark-code"></i></a>
+    </div>
+  
+</div>
+            
+    <section id="module-toio.standard_id">
+<span id="toio-standard-id-module"></span><h1>toio.standard_id module<a class="headerlink" href="#module-toio.standard_id" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.standard_id.</span></span><span class="sig-name descname"><span class="pre">StandardIdCard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/standard_id.html#StandardIdCard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.standard_id.StandardIdCard" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Typhoon">
+<span class="sig-name descname"><span class="pre">Typhoon</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670017</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Typhoon" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Rush">
+<span class="sig-name descname"><span class="pre">Rush</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670054</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Rush" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.AutoTackle">
+<span class="sig-name descname"><span class="pre">AutoTackle</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670018</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.AutoTackle" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Random">
+<span class="sig-name descname"><span class="pre">Random</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670056</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Random" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.PoweredUpStrike">
+<span class="sig-name descname"><span class="pre">PoweredUpStrike</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670020</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.PoweredUpStrike" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.PoweredUpSlap">
+<span class="sig-name descname"><span class="pre">PoweredUpSlap</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670058</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.PoweredUpSlap" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.SideAttack">
+<span class="sig-name descname"><span class="pre">SideAttack</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670022</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.SideAttack" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.EasyMode">
+<span class="sig-name descname"><span class="pre">EasyMode</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670060</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.EasyMode" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Left">
+<span class="sig-name descname"><span class="pre">Left</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670024</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Left" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Right">
+<span class="sig-name descname"><span class="pre">Right</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670062</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Right" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Forward">
+<span class="sig-name descname"><span class="pre">Forward</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670026</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Forward" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Back">
+<span class="sig-name descname"><span class="pre">Back</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670064</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Back" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Go">
+<span class="sig-name descname"><span class="pre">Go</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670028</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Go" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.SkunkBlue">
+<span class="sig-name descname"><span class="pre">SkunkBlue</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670078</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.SkunkBlue" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.SkunkGreen">
+<span class="sig-name descname"><span class="pre">SkunkGreen</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670042</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.SkunkGreen" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.SkunkYellow">
+<span class="sig-name descname"><span class="pre">SkunkYellow</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670080</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.SkunkYellow" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.SkunkOrange">
+<span class="sig-name descname"><span class="pre">SkunkOrange</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670044</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.SkunkOrange" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.SkunkRed">
+<span class="sig-name descname"><span class="pre">SkunkRed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670082</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.SkunkRed" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.SkunkBrown">
+<span class="sig-name descname"><span class="pre">SkunkBrown</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670046</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.SkunkBrown" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.SpeedUp">
+<span class="sig-name descname"><span class="pre">SpeedUp</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670066</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.SpeedUp" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.SlowDown">
+<span class="sig-name descname"><span class="pre">SlowDown</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670030</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.SlowDown" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Wobble">
+<span class="sig-name descname"><span class="pre">Wobble</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670068</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Wobble" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Panic">
+<span class="sig-name descname"><span class="pre">Panic</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670032</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Panic" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Spin">
+<span class="sig-name descname"><span class="pre">Spin</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670070</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Spin" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Shock">
+<span class="sig-name descname"><span class="pre">Shock</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670034</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Shock" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.CraftFighter">
+<span class="sig-name descname"><span class="pre">CraftFighter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670048</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.CraftFighter" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.RhythmAndGo">
+<span class="sig-name descname"><span class="pre">RhythmAndGo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670052</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.RhythmAndGo" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.SkunkChaser">
+<span class="sig-name descname"><span class="pre">SkunkChaser</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670086</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.SkunkChaser" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.FingerStrike">
+<span class="sig-name descname"><span class="pre">FingerStrike</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670050</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.FingerStrike" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.FingerStrikeForSinglePlayer">
+<span class="sig-name descname"><span class="pre">FingerStrikeForSinglePlayer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670088</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.FingerStrikeForSinglePlayer" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.FreeMove">
+<span class="sig-name descname"><span class="pre">FreeMove</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670084</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.FreeMove" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.QuickSkunk2p">
+<span class="sig-name descname"><span class="pre">QuickSkunk2p</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670092</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.QuickSkunk2p" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.QuickSkunkCpu">
+<span class="sig-name descname"><span class="pre">QuickSkunkCpu</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670094</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.QuickSkunkCpu" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.KaijuBusters">
+<span class="sig-name descname"><span class="pre">KaijuBusters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670096</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.KaijuBusters" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.WatchOutFree">
+<span class="sig-name descname"><span class="pre">WatchOutFree</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670098</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.WatchOutFree" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.WatchOut2p">
+<span class="sig-name descname"><span class="pre">WatchOut2p</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670100</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.WatchOut2p" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.WatchOutCpu">
+<span class="sig-name descname"><span class="pre">WatchOutCpu</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670102</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.WatchOutCpu" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ColorMemory">
+<span class="sig-name descname"><span class="pre">ColorMemory</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670104</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ColorMemory" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.LaserBeamChallenge">
+<span class="sig-name descname"><span class="pre">LaserBeamChallenge</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670106</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.LaserBeamChallenge" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.LaserBeamCreate">
+<span class="sig-name descname"><span class="pre">LaserBeamCreate</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670108</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.LaserBeamCreate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Baton">
+<span class="sig-name descname"><span class="pre">Baton</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670110</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Baton" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.PullBack">
+<span class="sig-name descname"><span class="pre">PullBack</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670112</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.PullBack" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Dash">
+<span class="sig-name descname"><span class="pre">Dash</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670114</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Dash" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.DontDisturbNormal">
+<span class="sig-name descname"><span class="pre">DontDisturbNormal</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670116</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.DontDisturbNormal" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.DontDisturbRodeo">
+<span class="sig-name descname"><span class="pre">DontDisturbRodeo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670118</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.DontDisturbRodeo" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.Answer">
+<span class="sig-name descname"><span class="pre">Answer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670120</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.Answer" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MusicSong1">
+<span class="sig-name descname"><span class="pre">MusicSong1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670122</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MusicSong1" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MusicSong2">
+<span class="sig-name descname"><span class="pre">MusicSong2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670124</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MusicSong2" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MusicSong3">
+<span class="sig-name descname"><span class="pre">MusicSong3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670126</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MusicSong3" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MusicSong4">
+<span class="sig-name descname"><span class="pre">MusicSong4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670128</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MusicSong4" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.NUMBER_0">
+<span class="sig-name descname"><span class="pre">NUMBER_0</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670320</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.NUMBER_0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.NUMBER_1">
+<span class="sig-name descname"><span class="pre">NUMBER_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670321</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.NUMBER_1" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.NUMBER_2">
+<span class="sig-name descname"><span class="pre">NUMBER_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670322</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.NUMBER_2" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.NUMBER_3">
+<span class="sig-name descname"><span class="pre">NUMBER_3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670323</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.NUMBER_3" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.NUMBER_4">
+<span class="sig-name descname"><span class="pre">NUMBER_4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670324</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.NUMBER_4" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.NUMBER_5">
+<span class="sig-name descname"><span class="pre">NUMBER_5</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670325</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.NUMBER_5" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.NUMBER_6">
+<span class="sig-name descname"><span class="pre">NUMBER_6</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670326</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.NUMBER_6" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.NUMBER_7">
+<span class="sig-name descname"><span class="pre">NUMBER_7</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670327</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.NUMBER_7" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.NUMBER_8">
+<span class="sig-name descname"><span class="pre">NUMBER_8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670328</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.NUMBER_8" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.NUMBER_9">
+<span class="sig-name descname"><span class="pre">NUMBER_9</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670329</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.NUMBER_9" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_A">
+<span class="sig-name descname"><span class="pre">ALPHABET_A</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670337</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_A" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_B">
+<span class="sig-name descname"><span class="pre">ALPHABET_B</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670338</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_B" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_C">
+<span class="sig-name descname"><span class="pre">ALPHABET_C</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670339</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_C" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_D">
+<span class="sig-name descname"><span class="pre">ALPHABET_D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670340</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_E">
+<span class="sig-name descname"><span class="pre">ALPHABET_E</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670341</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_E" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_F">
+<span class="sig-name descname"><span class="pre">ALPHABET_F</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670342</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_F" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_G">
+<span class="sig-name descname"><span class="pre">ALPHABET_G</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670343</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_G" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_H">
+<span class="sig-name descname"><span class="pre">ALPHABET_H</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670344</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_H" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_I">
+<span class="sig-name descname"><span class="pre">ALPHABET_I</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670345</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_I" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_J">
+<span class="sig-name descname"><span class="pre">ALPHABET_J</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670346</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_J" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_K">
+<span class="sig-name descname"><span class="pre">ALPHABET_K</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670347</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_K" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_L">
+<span class="sig-name descname"><span class="pre">ALPHABET_L</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670348</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_L" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_M">
+<span class="sig-name descname"><span class="pre">ALPHABET_M</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670349</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_M" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_N">
+<span class="sig-name descname"><span class="pre">ALPHABET_N</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670350</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_N" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_O">
+<span class="sig-name descname"><span class="pre">ALPHABET_O</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670351</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_O" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_P">
+<span class="sig-name descname"><span class="pre">ALPHABET_P</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670352</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_P" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_Q">
+<span class="sig-name descname"><span class="pre">ALPHABET_Q</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670353</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_Q" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_R">
+<span class="sig-name descname"><span class="pre">ALPHABET_R</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670354</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_R" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_S">
+<span class="sig-name descname"><span class="pre">ALPHABET_S</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670355</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_S" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_T">
+<span class="sig-name descname"><span class="pre">ALPHABET_T</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670356</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_T" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_U">
+<span class="sig-name descname"><span class="pre">ALPHABET_U</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670357</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_U" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_V">
+<span class="sig-name descname"><span class="pre">ALPHABET_V</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670358</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_V" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_W">
+<span class="sig-name descname"><span class="pre">ALPHABET_W</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670359</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_W" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_X">
+<span class="sig-name descname"><span class="pre">ALPHABET_X</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670360</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_X" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_Y">
+<span class="sig-name descname"><span class="pre">ALPHABET_Y</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670361</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_Y" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.ALPHABET_Z">
+<span class="sig-name descname"><span class="pre">ALPHABET_Z</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670362</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.ALPHABET_Z" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Exclamation">
+<span class="sig-name descname"><span class="pre">MARK_Exclamation</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670305</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Exclamation" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Up">
+<span class="sig-name descname"><span class="pre">MARK_Up</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670366</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Up" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Question">
+<span class="sig-name descname"><span class="pre">MARK_Question</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670335</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Question" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Plus">
+<span class="sig-name descname"><span class="pre">MARK_Plus</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670315</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Plus" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Minus">
+<span class="sig-name descname"><span class="pre">MARK_Minus</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670317</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Minus" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Equal">
+<span class="sig-name descname"><span class="pre">MARK_Equal</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670333</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Equal" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Left">
+<span class="sig-name descname"><span class="pre">MARK_Left</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670332</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Left" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Down">
+<span class="sig-name descname"><span class="pre">MARK_Down</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670367</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Down" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Right">
+<span class="sig-name descname"><span class="pre">MARK_Right</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670334</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Right" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Multiplication">
+<span class="sig-name descname"><span class="pre">MARK_Multiplication</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670314</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Multiplication" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Division">
+<span class="sig-name descname"><span class="pre">MARK_Division</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670319</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Division" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.standard_id.StandardIdCard.MARK_Percent">
+<span class="sig-name descname"><span class="pre">MARK_Percent</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3670309</span></em><a class="headerlink" href="#toio.standard_id.StandardIdCard.MARK_Percent" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+</div>
+        </article>
+        <aside class="nftt-toc">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">toio.standard_id module</a><ul>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard"><code class="docutils literal notranslate"><span class="pre">StandardIdCard</span></code></a><ul>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Typhoon"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Typhoon</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Rush"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Rush</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.AutoTackle"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.AutoTackle</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Random"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Random</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.PoweredUpStrike"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.PoweredUpStrike</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.PoweredUpSlap"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.PoweredUpSlap</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.SideAttack"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.SideAttack</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.EasyMode"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.EasyMode</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Left"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Left</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Right"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Right</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Forward"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Forward</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Back"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Back</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Go"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Go</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.SkunkBlue"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.SkunkBlue</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.SkunkGreen"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.SkunkGreen</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.SkunkYellow"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.SkunkYellow</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.SkunkOrange"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.SkunkOrange</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.SkunkRed"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.SkunkRed</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.SkunkBrown"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.SkunkBrown</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.SpeedUp"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.SpeedUp</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.SlowDown"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.SlowDown</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Wobble"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Wobble</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Panic"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Panic</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Spin"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Spin</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Shock"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Shock</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.CraftFighter"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.CraftFighter</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.RhythmAndGo"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.RhythmAndGo</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.SkunkChaser"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.SkunkChaser</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.FingerStrike"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.FingerStrike</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.FingerStrikeForSinglePlayer"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.FingerStrikeForSinglePlayer</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.FreeMove"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.FreeMove</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.QuickSkunk2p"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.QuickSkunk2p</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.QuickSkunkCpu"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.QuickSkunkCpu</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.KaijuBusters"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.KaijuBusters</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.WatchOutFree"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.WatchOutFree</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.WatchOut2p"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.WatchOut2p</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.WatchOutCpu"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.WatchOutCpu</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ColorMemory"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ColorMemory</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.LaserBeamChallenge"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.LaserBeamChallenge</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.LaserBeamCreate"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.LaserBeamCreate</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Baton"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Baton</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.PullBack"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.PullBack</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Dash"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Dash</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.DontDisturbNormal"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.DontDisturbNormal</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.DontDisturbRodeo"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.DontDisturbRodeo</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.Answer"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.Answer</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MusicSong1"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MusicSong1</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MusicSong2"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MusicSong2</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MusicSong3"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MusicSong3</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MusicSong4"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MusicSong4</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.NUMBER_0"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.NUMBER_0</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.NUMBER_1"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.NUMBER_1</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.NUMBER_2"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.NUMBER_2</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.NUMBER_3"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.NUMBER_3</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.NUMBER_4"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.NUMBER_4</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.NUMBER_5"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.NUMBER_5</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.NUMBER_6"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.NUMBER_6</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.NUMBER_7"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.NUMBER_7</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.NUMBER_8"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.NUMBER_8</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.NUMBER_9"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.NUMBER_9</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_A"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_A</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_B"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_B</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_C"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_C</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_D"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_D</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_E"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_E</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_F"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_F</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_G"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_G</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_H"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_H</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_I"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_I</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_J"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_J</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_K"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_K</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_L"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_L</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_M"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_M</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_N"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_N</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_O"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_O</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_P"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_P</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_Q"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_Q</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_R"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_R</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_S"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_S</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_T"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_T</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_U"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_U</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_V"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_V</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_W"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_W</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_X"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_X</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_Y"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_Y</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.ALPHABET_Z"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.ALPHABET_Z</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Exclamation"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Exclamation</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Up"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Up</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Question"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Question</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Plus"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Plus</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Minus"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Minus</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Equal"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Equal</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Left"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Left</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Down"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Down</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Right"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Right</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Multiplication"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Multiplication</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Division"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Division</span></code></a></li>
+<li><a class="reference internal" href="#toio.standard_id.StandardIdCard.MARK_Percent"><code class="docutils literal notranslate"><span class="pre">StandardIdCard.MARK_Percent</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="toio.position.html" class="d-flex pe-5 px-lg-5 align-items-end" rel="prev" aria-label="Previous page: toio.position module">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">toio.position module</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="toio.toio_uuid.html" class="d-flex ps-5 px-lg-5 align-items-end" rel="next" aria-label="Next page: toio.toio_uuid module">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">toio.toio_uuid module</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="toio-py-fork">
+          <span class="fs-6 fw-bold">toio-py-fork</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2022, Sony Interactive Entertainment; 2026, Yabe Kazuhiro</li>
+          </ul>
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.8</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <div class="modal modal-xl fade" id="nftt-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nftt-modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="nftt-modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="_static/sphinx-nefertiti.min.js?v=f7f548f2"></script>
+    <script src="_static/bootstrap.bundle.min.js?v=e96d90d1"></script>
+  </body>
+</html>

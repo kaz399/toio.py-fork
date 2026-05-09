@@ -1,7 +1,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../toio"))
+sys.path.insert(0, os.path.abspath(".."))
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -11,9 +11,9 @@ sys.path.insert(0, os.path.abspath("../toio"))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "toio.py"
-copyright = "2022, Sony Interactive Entertainment"
-author = "Sony Interactive Entertainment"
+project = "toio-py-fork"
+copyright = "2022, Sony Interactive Entertainment; 2026, Yabe Kazuhiro"
+author = "Sony Interactive Entertainment, Yabe Kazuhiro"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -61,6 +61,6 @@ autosummary_generate = True
 
 # -- Options for multiversion ------------------------------------------------
 
-smv_tag_whitelist = r"^api_\d+\.\d+\.(\d+|\d(a|b|rc)*\d+|\d+\.post\d+)$"
-smv_branch_whitelist = "__DOCUMENT_FOR_BRANCH_IS_NOT_GENERATED__"
+smv_tag_whitelist = r"^$"
+smv_branch_whitelist = r"^fork$"
 

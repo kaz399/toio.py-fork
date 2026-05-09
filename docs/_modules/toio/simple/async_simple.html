@@ -1,60 +1,63 @@
 
-
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="docsearch:name" content="toio.py" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <meta name="docsearch:name" content="toio-py-fork" />
     <meta name="docsearch:package_type" content="" />
     <meta name="docsearch:release" content="" />
     <meta name="docsearch:version" content="" />
     
-      <title>toio.simple.async_simple &mdash; toio.py  documentation</title>
+      <meta name="theme-color" content="#0DCAF0" />
     
-    <link rel="stylesheet" href="../../../_static/bootstrap-icons.css" type="text/css" />
-          <!-- add (1) pathto "_static/pygments.css" -->
-          <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=83e35b93" />
-          <!-- add (1) pathto "_static/pygments_dark.css" -->
-          <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../../../_static/pygments_dark.css?v=b20cc3f5" />
-          <!-- add (1) pathto "_static/colorsets\sphinx-nefertiti-default-0.3.2.min.css" -->
-          <link rel="stylesheet" type="text/css" href="../../../_static/colorsets\sphinx-nefertiti-default-0.3.2.min.css" />
-          <!-- add (1) pathto "_static/fonts\nunito\stylesheet.css" -->
-          <link rel="stylesheet" type="text/css" href="../../../_static/fonts\nunito\stylesheet.css" />
-          <!-- add (1) pathto "_static/fonts\red-hat-mono\stylesheet.css" -->
-          <link rel="stylesheet" type="text/css" href="../../../_static/fonts\red-hat-mono\stylesheet.css" />
+    
+      <title>toio.simple.async_simple &mdash; toio-py-fork  documentation</title>
+    
+    <link rel="canonical" href="_modules/toio/simple/async_simple" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/pygments-light.css?v=970f37b1" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-nefertiti-default.min.css?v=88df5cc9" /><!-- add (1) -->
         <link rel="index" title="Index" href="../../../genindex.html" />
         <link rel="search" title="Search" href="../../../search.html" />
-        <link rel="top" title="toio.py  documentation" href="#" />
+        <link rel="top" title="toio-py-fork  documentation" href="#" />
         <link rel="up" title="toio.simple" href="../simple.html" />
     <style>
       :root {
         --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
-        --nftt-font-monospace: "Red Hat Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
         --nftt-project-name-font: var(--nftt-body-font-family);
         --nftt-documentation-font: var(--nftt-body-font-family);
         --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
-      h1 *, h2 *, h3 *, h4 *, h5 *, h6 * { font-size: inherit; }
     </style>
   </head>
   <body>
-    <header class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
       <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
         <div class="border-bottom mb-2 pb-2 w-100">
-          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to docs navigation</a>
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
           <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
         </div>
       </div>
-      <nav class="container-xxl nftt-gutter flex-wrap flex-xl-nowrap" aria-label="Main navigation">
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
         <div class="nftt-navbar-toggler">
           <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
             <i class="bi bi-list"></i>
           </button>
         </div>
           <a href="../../../index.html"
-              
-              class="navbar-brand p-0 me-0 md-lg-2"
-          ><span class="brand-text">toio.py</span></a>
+             class="navbar-brand"
+          ><span class="brand-text">toio-py-fork</span><span class="brand-short-text">toio-py-fork</span></a>
+        
         
         <div class="d-flex d-xl-none">
           <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
@@ -70,13 +73,13 @@
     <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
   </div>
-  <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
     <hr class="d-xl-none text-white-50">
     <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
       <li class="nav-item col-12 col-xl-auto">
         <form id="nftt-search-form" action="../../../search.html" method="get">
           <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search docs" aria-label="Search" aria-describedby="button-search">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
             <input type="hidden" name="check_keywords" value="yes" />
             <input type="hidden" name="area" value="default" />
             <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
@@ -89,50 +92,51 @@
 
         <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
           <div class="offcanvas-header px-4 pb-0">
-            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-text">Nefertiti for Sphinx</span></div>
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">toio-py-fork</span></div>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
           </div>
           <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
             <hr class="d-xl-none text-white-50">
             <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
               
-              <!-- version_dropdown.html -->
-
               
-              <!-- colorscheme_dropdown.html -->
+              
+              
+              
+              <!-- lightdark-dropdown.html -->
 <li class="nav-item dropdown">
-  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle light/dark">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
     <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
-    <span id="snftt-luz-text" class="d-xl-none small ms-2">Toggle light/dark</span>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
   </a>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
     <li>
-      <h6 class="dropdown-header">Light/dark</h6>
+      <h6 class="dropdown-header">Change appearance</h6>
     </li>
     <li>
       <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
-        <span class="small">
+        <span>
           <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
         </span>
-        <span class="small ms-3">Light</span>
+        <span class="ms-3">Light</span>
         <i class="bi bi-check ms-auto"></i>
       </a>
     </li>
     <li>
       <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
-        <span class="small">
+        <span>
           <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
         </span>
-        <span class="small ms-3">Dark</span>
+        <span class="ms-3">Dark</span>
         <i class="bi bi-check ms-auto"></i>
       </a>
     </li>
     <li>
       <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
-        <span class="small">
+        <span>
           <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
         </span>
-        <span class="small ms-3">Default</span>
+        <span class="ms-3">Automatic</span>
         <i class="bi bi-check ms-auto"></i>
       </a>
     </li>
@@ -142,23 +146,39 @@
           </div>
         </div>
       </nav>
+      
     </header>
 
-    <div class="container-fluid flex-grow-1">
+    <div class="container-fluid">
       <div class="nftt-gutter nftt-page">
         <aside class="nftt-sidebar ">
           <div class="nftt-sidebar-content">
             
-            <div class="title d-none d-xl-block">
+            <div class="title d-none d-xl-none">
               <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
             </div>
             <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
-                <!-- danirus sidebartemplate: "version.html" -->
+                <!-- sidebartemplate: "version.html" -->
             </div>
             
           </div>
         </aside>
         <article id="content" class="nftt-content" role="main">
+          <div><div class="d-flex flex-row justify-content-between">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../index.html">Start</a></li>
+        <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+        <li class="breadcrumb-item"><a href="../simple.html">toio.simple</a></li>
+      <li class="breadcrumb-item active" aria-current="page">toio.simple.async_simple</li>
+    </ol>
+  </nav>
+  
+    <div class="fs085">
+    </div>
+  
+</div>
+            
     <h1>Source code for toio.simple.async_simple</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="c1"># ************************************************************</span>
@@ -169,37 +189,37 @@
 <span class="c1">#</span>
 <span class="c1"># ************************************************************</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 
-<span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">auto</span>
-<span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">NOTSET</span><span class="p">,</span> <span class="n">Formatter</span><span class="p">,</span> <span class="n">NullHandler</span><span class="p">,</span> <span class="n">StreamHandler</span><span class="p">,</span> <span class="n">getLogger</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">ClassVar</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Type</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">auto</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">logging</span><span class="w"> </span><span class="kn">import</span> <span class="n">NOTSET</span><span class="p">,</span> <span class="n">Formatter</span><span class="p">,</span> <span class="n">NullHandler</span><span class="p">,</span> <span class="n">StreamHandler</span><span class="p">,</span> <span class="n">getLogger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassVar</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Type</span>
 
-<span class="kn">from</span> <span class="nn">..coordinate_systems</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..coordinate_systems</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">LocalCoordinateSystem</span><span class="p">,</span>
     <span class="n">VisualProgrammingCoordinateSystem</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..cube</span> <span class="kn">import</span> <span class="n">ToioCoreCube</span>
-<span class="kn">from</span> <span class="nn">..cube.api.base_class</span> <span class="kn">import</span> <span class="n">CubeCharacteristic</span><span class="p">,</span> <span class="n">NotificationHandlerTypes</span>
-<span class="kn">from</span> <span class="nn">..cube.api.button</span> <span class="kn">import</span> <span class="n">Button</span><span class="p">,</span> <span class="n">ButtonInformation</span>
-<span class="kn">from</span> <span class="nn">..cube.api.configuration</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..cube</span><span class="w"> </span><span class="kn">import</span> <span class="n">ToioCoreCube</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..cube.api.base_class</span><span class="w"> </span><span class="kn">import</span> <span class="n">CubeCharacteristic</span><span class="p">,</span> <span class="n">NotificationHandlerTypes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..cube.api.button</span><span class="w"> </span><span class="kn">import</span> <span class="n">Button</span><span class="p">,</span> <span class="n">ButtonInformation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..cube.api.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">MagneticSensorCondition</span><span class="p">,</span>
     <span class="n">MagneticSensorFunction</span><span class="p">,</span>
     <span class="n">PostureAngleDetectionCondition</span><span class="p">,</span>
     <span class="n">PostureAngleDetectionType</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..cube.api.id_information</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..cube.api.id_information</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">IdInformation</span><span class="p">,</span>
     <span class="n">PositionId</span><span class="p">,</span>
     <span class="n">PositionIdMissed</span><span class="p">,</span>
     <span class="n">StandardId</span><span class="p">,</span>
     <span class="n">StandardIdMissed</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..cube.api.indicator</span> <span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">IndicatorParam</span>
-<span class="kn">from</span> <span class="nn">..cube.api.motor</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..cube.api.indicator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">IndicatorParam</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..cube.api.motor</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">Motor</span><span class="p">,</span>
     <span class="n">MotorResponseCode</span><span class="p">,</span>
     <span class="n">MovementType</span><span class="p">,</span>
@@ -209,15 +229,15 @@
     <span class="n">Speed</span><span class="p">,</span>
     <span class="n">TargetPosition</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..cube.api.sensor</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..cube.api.sensor</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">MagneticSensorData</span><span class="p">,</span>
     <span class="n">MotionDetectionData</span><span class="p">,</span>
     <span class="n">PostureAngleEulerData</span><span class="p">,</span>
     <span class="n">PostureDataType</span><span class="p">,</span>
     <span class="n">Sensor</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..cube.api.sound</span> <span class="kn">import</span> <span class="n">MidiNote</span><span class="p">,</span> <span class="n">Note</span>
-<span class="kn">from</span> <span class="nn">..position</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..cube.api.sound</span><span class="w"> </span><span class="kn">import</span> <span class="n">MidiNote</span><span class="p">,</span> <span class="n">Note</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..position</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">STAY_CURRENT</span><span class="p">,</span>
     <span class="n">CubeLocation</span><span class="p">,</span>
     <span class="n">MatRect</span><span class="p">,</span>
@@ -225,9 +245,9 @@
     <span class="n">RelativeCubeLocation</span><span class="p">,</span>
     <span class="n">ToioMat</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..scanner.ble</span> <span class="kn">import</span> <span class="n">UniversalBleScanner</span>
-<span class="kn">from</span> <span class="nn">..standard_id</span> <span class="kn">import</span> <span class="n">StandardIdCard</span>
-<span class="kn">from</span> <span class="nn">..utility</span> <span class="kn">import</span> <span class="n">clip</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..scanner.ble</span><span class="w"> </span><span class="kn">import</span> <span class="n">UniversalBleScanner</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..standard_id</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardIdCard</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utility</span><span class="w"> </span><span class="kn">import</span> <span class="n">clip</span>
 
 <span class="n">module_logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="n">module_logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">NOTSET</span><span class="p">)</span>
@@ -236,14 +256,19 @@
 <span class="n">module_logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">module_handler</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="Direction"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.Direction">[docs]</a><span class="k">class</span> <span class="nc">Direction</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="Direction">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.Direction">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Direction</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">Forward</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
     <span class="n">Backward</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
     <span class="n">Right</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
     <span class="n">Left</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="AsyncSimpleCube"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube">[docs]</a><span class="k">class</span> <span class="nc">AsyncSimpleCube</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AsyncSimpleCube</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Access to toio core cube by easier method</span>
 <span class="sd">    Functions that like blocks in visual programming</span>
@@ -258,8 +283,10 @@
     <span class="n">_LOCK</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">asyncio</span><span class="o">.</span><span class="n">Lock</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">_CUBES</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
 
-<div class="viewcode-block" id="AsyncSimpleCube.ensure_event_loop"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.ensure_event_loop">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">ensure_event_loop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">AbstractEventLoop</span><span class="p">:</span>
+<div class="viewcode-block" id="AsyncSimpleCube.ensure_event_loop">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.ensure_event_loop">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ensure_event_loop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">AbstractEventLoop</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
@@ -267,8 +294,11 @@
             <span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop</span><span class="p">(</span><span class="n">event_loop</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">event_loop</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.search"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.search">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ToioCoreCube</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.search">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.search">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ToioCoreCube</span><span class="p">:</span>
         <span class="n">BLEScanner</span> <span class="o">=</span> <span class="n">UniversalBleScanner</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;search </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> in my registered devices&quot;</span><span class="p">)</span>
@@ -289,7 +319,10 @@
             <span class="k">raise</span> <span class="ne">ValueError</span>
         <span class="k">return</span> <span class="n">ToioCoreCube</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">devices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">interface</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">devices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.__init__"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.__init__">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
@@ -337,13 +370,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_cube_angle</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PostureAngleEulerData</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_magnet</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MagneticSensorData</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_scan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_scan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;no cubes are found&quot;</span><span class="p">)</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_button</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ButtonInformation</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">button</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_sensor_configurations</span><span class="p">()</span>
@@ -359,7 +393,7 @@
             <span class="k">await</span> <span class="n">characteristic</span><span class="o">.</span><span class="n">register_notification_handler</span><span class="p">(</span><span class="n">notification_handler</span><span class="p">)</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wait_to_obtain_initial_information</span><span class="p">()</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_set_sensor_configurations</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_set_sensor_configurations</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">set_magnetic_sensor</span><span class="p">(</span>
             <span class="n">function_type</span><span class="o">=</span><span class="n">MagneticSensorFunction</span><span class="o">.</span><span class="n">MagnetState</span><span class="p">,</span>
@@ -373,7 +407,7 @@
             <span class="n">condition</span><span class="o">=</span><span class="n">PostureAngleDetectionCondition</span><span class="o">.</span><span class="n">ChangeDetection</span><span class="p">,</span>
         <span class="p">)</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_request_initial_information</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_request_initial_information</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">request_motion_information</span><span class="p">()</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">request_posture_angle_information</span><span class="p">(</span>
@@ -381,22 +415,24 @@
         <span class="p">)</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">request_magnetic_sensor_information</span><span class="p">()</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_wait_to_obtain_initial_information</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_wait_to_obtain_initial_information</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_motion</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube_angle</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_magnet</span><span class="p">:</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request_initial_information</span><span class="p">()</span>
             <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">AsyncSimpleCube</span><span class="o">.</span><span class="n">_CUBES</span> <span class="o">-=</span> <span class="mi">1</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="fm">__aenter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncSimpleCube</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__aenter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncSimpleCube</span><span class="p">:</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="fm">__aexit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_exc_type</span><span class="p">,</span> <span class="n">_exc_value</span><span class="p">,</span> <span class="n">_traceback</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__aexit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_exc_type</span><span class="p">,</span> <span class="n">_exc_value</span><span class="p">,</span> <span class="n">_traceback</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 
-<div class="viewcode-block" id="AsyncSimpleCube.connect"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.connect">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AsyncSimpleCube.connect">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.connect">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;start to connect&quot;</span><span class="p">)</span>
         <span class="k">assert</span> <span class="n">AsyncSimpleCube</span><span class="o">.</span><span class="n">_LOCK</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;try to lock&quot;</span><span class="p">)</span>
@@ -414,14 +450,20 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;release lock&quot;</span><span class="p">)</span>
         <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.disconnect"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.disconnect">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.disconnect">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.disconnect">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;disconnecting&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">is_connect</span><span class="p">():</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;disconnected&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.sleep"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.sleep">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sleep_second</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.sleep">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.sleep">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">sleep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sleep_second</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -429,7 +471,8 @@
             <span class="k">if</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">sleep_second</span><span class="p">:</span>
                 <span class="k">break</span></div>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_id_notification_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_id_notification_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">id_info</span> <span class="o">=</span> <span class="n">IdInformation</span><span class="o">.</span><span class="n">is_my_data</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">id_info</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">id_info</span><span class="p">,</span> <span class="n">PositionId</span><span class="p">):</span>
@@ -464,7 +507,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_standard_id</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_on_standard_id</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_motor_notification_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_motor_notification_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">motor_response</span> <span class="o">=</span> <span class="n">Motor</span><span class="o">.</span><span class="n">is_my_data</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">motor_response</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span>
@@ -478,7 +521,7 @@
             <span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_arrived</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_motion_sensor_notification_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_motion_sensor_notification_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">sensor_info</span> <span class="o">=</span> <span class="n">Sensor</span><span class="o">.</span><span class="n">is_my_data</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">sensor_info</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sensor_info</span><span class="p">,</span> <span class="n">MotionDetectionData</span><span class="p">):</span>
@@ -488,13 +531,15 @@
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sensor_info</span><span class="p">,</span> <span class="n">MagneticSensorData</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_magnet</span> <span class="o">=</span> <span class="n">sensor_info</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_button_notification_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_button_notification_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">button_info</span> <span class="o">=</span> <span class="n">Button</span><span class="o">.</span><span class="n">is_my_data</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">button_info</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">button_info</span><span class="p">,</span> <span class="n">ButtonInformation</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_button</span> <span class="o">=</span> <span class="n">button_info</span>
 
-<div class="viewcode-block" id="AsyncSimpleCube.move"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.move">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">move</span><span class="p">(</span>
+<div class="viewcode-block" id="AsyncSimpleCube.move">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.move">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">wait_to_complete</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -504,7 +549,10 @@
         <span class="k">if</span> <span class="n">wait_to_complete</span><span class="p">:</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.spin"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.spin">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">spin</span><span class="p">(</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.spin">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.spin">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">spin</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">wait_to_complete</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -517,7 +565,10 @@
         <span class="k">if</span> <span class="n">wait_to_complete</span><span class="p">:</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.run_motor"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.run_motor">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run_motor</span><span class="p">(</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.run_motor">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.run_motor">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run_motor</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">left_speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">right_speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -531,7 +582,10 @@
         <span class="k">if</span> <span class="n">wait_to_complete</span><span class="p">:</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.stop_motor"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.stop_motor">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">stop_motor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.stop_motor">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.stop_motor">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stop_motor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;stop_motor.</span>
 
 <span class="sd">        Args:</span>
@@ -542,7 +596,10 @@
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">motor</span><span class="o">.</span><span class="n">motor_control</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.move_steps"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.move_steps">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">move_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="n">Direction</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.move_steps">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.move_steps">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">move_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="n">Direction</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_position_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_native_location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -574,10 +631,11 @@
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_move_to_target</span><span class="p">(</span><span class="n">speed_param</span><span class="p">,</span> <span class="n">target_param</span><span class="p">)</span>
         <span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">_step_to_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_step_to_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">step</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">DEFAULT_ONE_STEP</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_move_to_target</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="n">Speed</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">TargetPosition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_move_to_target</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="n">Speed</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">TargetPosition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_arrived</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="n">executed_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -589,7 +647,7 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">executed_time</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">_wait_arrival</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">executed_time</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_wait_arrival</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">executed_time</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
         <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arrived</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_position_id</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Position ID Missed&quot;</span><span class="p">)</span>
@@ -600,7 +658,9 @@
                 <span class="k">break</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arrived</span>
 
-<div class="viewcode-block" id="AsyncSimpleCube.turn"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.turn">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">turn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="AsyncSimpleCube.turn">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.turn">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">turn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_position_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -623,7 +683,10 @@
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_move_to_target</span><span class="p">(</span><span class="n">speed_param</span><span class="p">,</span> <span class="n">target_param</span><span class="p">)</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.move_to"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.move_to">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.move_to">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.move_to">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_position_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_native_location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -646,7 +709,10 @@
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_move_to_target</span><span class="p">(</span><span class="n">speed_param</span><span class="p">,</span> <span class="n">target_param</span><span class="p">)</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.set_orientation"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.set_orientation">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.set_orientation">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.set_orientation">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_position_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_native_location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -671,13 +737,19 @@
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_move_to_target</span><span class="p">(</span><span class="n">speed_param</span><span class="p">,</span> <span class="n">target_param</span><span class="p">)</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.move_to_the_grid_cell"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.move_to_the_grid_cell">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">move_to_the_grid_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.move_to_the_grid_cell">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.move_to_the_grid_cell">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">move_to_the_grid_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_position_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="n">cell_point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cell_to_point</span><span class="p">(</span><span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">)</span>
         <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="n">cell_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cell_point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_current_position"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_current_position">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_current_position</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_current_position">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_current_position">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_current_position</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="o">.</span><span class="n">relative_location</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
@@ -686,46 +758,67 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_x"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_x">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_x">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_x">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="o">.</span><span class="n">relative_location</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">x</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_y"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_y">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_y</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_y">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_y">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_y</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="o">.</span><span class="n">relative_location</span><span class="o">.</span><span class="n">point</span><span class="o">.</span><span class="n">y</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_orientation"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_orientation">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_orientation">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_orientation">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="o">.</span><span class="n">relative_location</span><span class="o">.</span><span class="n">angle</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_grid"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_grid">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_grid">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_grid">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_position_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="p">(</span><span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point_to_cell</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="o">.</span><span class="n">relative_location</span><span class="o">.</span><span class="n">point</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_grid_x"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_grid_x">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_grid_x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_grid_x">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_grid_x">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_grid_x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_position_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="p">(</span><span class="n">cell_x</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point_to_cell</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="o">.</span><span class="n">relative_location</span><span class="o">.</span><span class="n">point</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">cell_x</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_grid_y"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_grid_y">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_grid_y</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_grid_y">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_grid_y">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_grid_y</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_position_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point_to_cell</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="o">.</span><span class="n">relative_location</span><span class="o">.</span><span class="n">point</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">cell_y</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.is_on_the_gird_cell"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.is_on_the_gird_cell">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">is_on_the_gird_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.is_on_the_gird_cell">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.is_on_the_gird_cell">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">is_on_the_gird_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_position_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -734,14 +827,17 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">current_cell_x</span><span class="p">,</span> <span class="n">current_cell_y</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">_cell_to_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Point</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_cell_to_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Point</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">CELL_SIZE</span> <span class="o">*</span> <span class="n">cell_x</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">CELL_SIZE</span> <span class="o">*</span> <span class="n">cell_y</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">_point_to_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relative_point</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_point_to_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relative_point</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
         <span class="n">cell</span> <span class="o">=</span> <span class="n">relative_point</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">CELL_SIZE</span>
         <span class="k">return</span> <span class="n">cell</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">y</span>
 
-<div class="viewcode-block" id="AsyncSimpleCube.is_touched"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.is_touched">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">is_touched</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">StandardIdCard</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="AsyncSimpleCube.is_touched">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.is_touched">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">is_touched</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">StandardIdCard</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_standard_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">try</span><span class="p">:</span>
@@ -753,7 +849,10 @@
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="n">current_item</span> <span class="o">==</span> <span class="n">item</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_touched_card"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_touched_card">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_touched_card</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_touched_card">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_touched_card">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_touched_card</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_standard_id</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">try</span><span class="p">:</span>
@@ -766,11 +865,17 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">current_item</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">current_item</span><span class="o">.</span><span class="n">value</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_cube_name"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_cube_name">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_cube_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_cube_name">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_cube_name">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_cube_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">name</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_battery_level"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_battery_level">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_battery_level</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_battery_level">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_battery_level">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_battery_level</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="n">battery_info</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">battery</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">battery_info</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -778,24 +883,36 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_3d_angle"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_3d_angle">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_3d_angle</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_3d_angle">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_3d_angle">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_3d_angle</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube_angle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube_angle</span><span class="o">.</span><span class="n">roll</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube_angle</span><span class="o">.</span><span class="n">pitch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube_angle</span><span class="o">.</span><span class="n">yaw</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.get_posture"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_posture">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_posture</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.get_posture">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.get_posture">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_posture</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_motion</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_motion</span><span class="o">.</span><span class="n">posture</span><span class="o">.</span><span class="n">value</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.is_button_pressed"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.is_button_pressed">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">is_button_pressed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.is_button_pressed">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.is_button_pressed">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">is_button_pressed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_button</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_button</span><span class="o">.</span><span class="n">state</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.turn_on_cube_lamp"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.turn_on_cube_lamp">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">turn_on_cube_lamp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.turn_on_cube_lamp">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.turn_on_cube_lamp">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">turn_on_cube_lamp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="n">duration</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">duration</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
         <span class="n">indicator_param</span> <span class="o">=</span> <span class="n">IndicatorParam</span><span class="p">(</span>
@@ -807,11 +924,17 @@
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">turn_off_all</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.turn_off_cube_lamp"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.turn_off_cube_lamp">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">turn_off_cube_lamp</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.turn_off_cube_lamp">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.turn_off_cube_lamp">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">turn_off_cube_lamp</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">turn_off_all</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.play_sound"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.play_sound">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">play_sound</span><span class="p">(</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.play_sound">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.play_sound">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">play_sound</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">note</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">wait_to_complete</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -836,18 +959,40 @@
             <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.stop_sound"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.stop_sound">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">stop_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.stop_sound">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.stop_sound">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stop_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cube</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">sound</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="AsyncSimpleCube.is_magnet_in_contact"><a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.is_magnet_in_contact">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">is_magnet_in_contact</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="AsyncSimpleCube.is_magnet_in_contact">
+<a class="viewcode-back" href="../../../toio.simple.async_simple.html#toio.simple.AsyncSimpleCube.is_magnet_in_contact">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">is_magnet_in_contact</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_magnet</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_magnet</span><span class="o">.</span><span class="n">state</span></div></div>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_magnet</span><span class="o">.</span><span class="n">state</span></div>
+</div>
+
 </pre></div>
-</article>
+</div>
+        </article>
         <aside class="nftt-toc">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                
+              </nav>
+            </div>
+          </div>
           
         </aside>
       </div>
@@ -863,31 +1008,43 @@
 
     <div class="row">
       <div class="col-lg-12 text-center">
-        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="Nefertiti-for-Sphinx">
-          <span class="fs-6 fw-bold">toio.py</span>
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="toio-py-fork">
+          <span class="fs-6 fw-bold">toio-py-fork</span>
         </a>
         
           <ul class="list-unstyled small text-muted">
-            <li>2022, Sony Interactive Entertainment</li>
+            <li>2022, Sony Interactive Entertainment; 2026, Yabe Kazuhiro</li>
           </ul>
         
-        
         <div class="built-with pt-2">
-          Built with <a href="http://sphinx-doc.org">Sphinx 7.1.2</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.3.2</a>
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.8</a>
         </div>
-        
       </div>
     </div>
   </div>
 </div>
     </footer>
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=b3ba4146"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
 
-    <script type="text/javascript" src="../../../_static/sphinx-nefertiti-0.3.2.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap.bundle-0.3.2.min.js"></script>
-    
-    <script type="text/javascript" src="../../../_static/doc_versions.js"></script>
+    <div class="modal modal-xl fade" id="nftt-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nftt-modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="nftt-modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="../../../_static/sphinx-nefertiti.min.js?v=f7f548f2"></script>
+    <script src="../../../_static/bootstrap.bundle.min.js?v=e96d90d1"></script>
   </body>
 </html>

@@ -1,21 +1,18 @@
 .. toio.py documentation master file, created by
-   sphinx-quickstart on Wed May 29 14:56:55 2024.
+   sphinx-quickstart on Sat May  9 14:07:38 2026.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to toio.py's documentation!
-===================================
+toio.py documentation
+=====================
+
+Add your content using ``reStructuredText`` syntax. See the
+`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
+documentation for details.
+
 
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
 
    toio
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

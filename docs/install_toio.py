@@ -73,8 +73,8 @@ CLEANUP_TARGETS = (
 )
 
 EXAMPLES = (
-   "https://toio.github.io/toio.py/examples/async_gather.py",
    "https://toio.github.io/toio.py/examples/async_gather_multi.py",
+   "https://toio.github.io/toio.py/examples/async_gather.py",
    "https://toio.github.io/toio.py/examples/async_task_group.py",
    "https://toio.github.io/toio.py/examples/detect_mat.py",
    "https://toio.github.io/toio.py/examples/motor_control.py",

@@ -24,16 +24,18 @@ fi
 poetry run sphinx-build docs-conf docs
 poetry run sphinx-multiversion docs-conf docs
 
-if `grep --version | grep BSD` ; then
+if (grep --version | grep BSD) ; then
     GREP="grep -E"
 else
     GREP="grep -P"
 fi
 
-LATEST=`git tag --sort=committerdate | ${GREP} '^api_\d+\.\d+\.(\d+|\d(a|b|rc)*\d+|\d+\.post\d+)$' | tail -1`
+# LATEST=`git tag --sort=committerdate | ${GREP} '^api_\d+\.\d+\.(\d+|\d(a|b|rc)*\d+|\d+\.post\d+)$' | tail -1`
+LATEST="fork"
 
 cp ./mkdocs/index.html ./docs/index.html
 pushd docs
+rm -f latest
 ln -s ${LATEST} latest
 mkdir examples
 pushd examples
