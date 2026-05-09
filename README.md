@@ -195,6 +195,21 @@ ID or BLE address terminated early after all requested cubes were found. This
 fork keeps the full-timeout behavior as `best` and adds `quick` for early
 termination.
 
+You can also specify scan settings like `strategy` and `timeout` directly
+as keyword arguments when initializing `ToioCoreCube` or `MultipleToioCoreCubes`.
+
+```Python
+# Example for ToioCoreCube (single)
+async with ToioCoreCube(strategy="quick") as cube:
+    ...
+
+# Example for MultipleToioCoreCubes (multiple)
+async with MultipleToioCoreCubes(cubes=2, strategy="quick") as cubes:
+    ...
+```
+
+Example for using `BLEScanner.scan()` directly:
+
 ```Python
 # Prefer RSSI-ranked candidates. This waits until timeout.
 dev_list = await BLEScanner.scan(num=2, strategy="best")

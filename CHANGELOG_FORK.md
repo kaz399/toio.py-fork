@@ -11,6 +11,7 @@ For the upstream project changelog, see [CHANGELOG.md](./CHANGELOG.md).
 - Added scanner scan strategies:
   - `strategy="best"` keeps scanning until timeout and returns the best sorted candidates.
   - `strategy="quick"` returns as soon as the requested number of cubes are found.
+- Added keyword argument (`**kwargs`) support to `MultipleToioCoreCubes` and `ToioCoreCube` initialization. This allows intuitive configuration of scan settings, such as `strategy="quick"`.
 - Added the scanner strategies in response to [toio/toio.py#15](https://github.com/toio/toio.py/issues/15), which reported that `scan(num=N)` always waited for the full timeout while scans by cube ID or BLE address terminated early.
 - Added `UniversalBleScanner.scan_best()` and `UniversalBleScanner.scan_quick()` helpers.
 - Added validation for scanner strategy values.

@@ -191,6 +191,21 @@ if __name__ == "__main__":
 指摘されています。この fork では、timeout まで待つ従来動作を `best` として残し、
 早期終了する動作を `quick` として追加しています。
 
+`ToioCoreCube` および `MultipleToioCoreCubes` の初期化時にキーワード引数として
+`strategy` や `timeout` などのスキャン設定を直接指定することも可能です。
+
+```Python
+# ToioCoreCube (単体) での指定例
+async with ToioCoreCube(strategy="quick") as cube:
+    ...
+
+# MultipleToioCoreCubes (複数台) での指定例
+async with MultipleToioCoreCubes(cubes=2, strategy="quick") as cubes:
+    ...
+```
+
+`BLEScanner.scan()` を直接使う場合の例：
+
 ```Python
 # Prefer RSSI-ranked candidates. This waits until timeout.
 dev_list = await BLEScanner.scan(num=2, strategy="best")
