@@ -30,7 +30,7 @@
         <link rel="search" title="Search" href="search.html" />
         <link rel="top" title="toio-py-fork  documentation" href="#" />
         <link rel="next" title="toio.cube package" href="toio.cube.html" />
-        <link rel="prev" title="Welcome to toio.py’s documentation!" href="index.html" />
+        <link rel="prev" title="toio.py documentation" href="index.html" />
     <style>
       :root {
         --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
@@ -584,7 +584,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.</span></span><span class="sig-name descname"><span class="pre">ToioCoreCube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface:</span> <span class="pre">~toio.device_interface.CubeInterface</span> <span class="pre">|</span> <span class="pre">~toio.device_interface.CubeInfo</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scanner:</span> <span class="pre">~typing.Type[~toio.device_interface.ScannerInterface]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'toio.scanner.ble.UniversalBleScanner'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scanner_args:</span> <span class="pre">~typing.Sequence[~typing_extensions.Any]</span> <span class="pre">=</span> <span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube.html#ToioCoreCube"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.</span></span><span class="sig-name descname"><span class="pre">ToioCoreCube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface:</span> <span class="pre">~toio.device_interface.CubeInterface</span> <span class="pre">|</span> <span class="pre">~toio.device_interface.CubeInfo</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scanner:</span> <span class="pre">~typing.Type[~toio.device_interface.ScannerInterface]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'toio.scanner.ble.UniversalBleScanner'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scanner_args:</span> <span class="pre">~typing.Sequence[~typing_extensions.Any]</span> <span class="pre">=</span> <span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs:</span> <span class="pre">~typing_extensions.Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube.html#ToioCoreCube"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Bases: <a class="reference internal" href="toio.device_interface.html#toio.device_interface.CubeInterface" title="toio.device_interface.CubeInterface"><code class="xref py py-class docutils literal notranslate"><span class="pre">CubeInterface</span></code></a></p>
 <p>Access to toio Core Cube</p>
 <div class="admonition note">
@@ -701,8 +701,14 @@ and ‘__aexit__’ handles the disconnection.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface:</span> <span class="pre">~toio.device_interface.CubeInterface</span> <span class="pre">|</span> <span class="pre">~toio.device_interface.CubeInfo</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scanner:</span> <span class="pre">~typing.Type[~toio.device_interface.ScannerInterface]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'toio.scanner.ble.UniversalBleScanner'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scanner_args:</span> <span class="pre">~typing.Sequence[~typing_extensions.Any]</span> <span class="pre">=</span> <span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube.html#ToioCoreCube.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface:</span> <span class="pre">~toio.device_interface.CubeInterface</span> <span class="pre">|</span> <span class="pre">~toio.device_interface.CubeInfo</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scanner:</span> <span class="pre">~typing.Type[~toio.device_interface.ScannerInterface]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'toio.scanner.ble.UniversalBleScanner'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scanner_args:</span> <span class="pre">~typing.Sequence[~typing_extensions.Any]</span> <span class="pre">=</span> <span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs:</span> <span class="pre">~typing_extensions.Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube.html#ToioCoreCube.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Initialize a ToioCoreCube instance.</p>
+<p>When keyword arguments are specified, they are passed to the scanner’s scan() function.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">with</span> <span class="n">ToioCoreCube</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;quick&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cube</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">cube</span><span class="o">.</span><span class="n">api</span><span class="o">....</span><span class="p">()</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -710,6 +716,7 @@ and ‘__aexit__’ handles the disconnection.</p>
 <li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – cube name</p></li>
 <li><p><strong>scanner</strong> (<em>Type</em><em>[</em><a class="reference internal" href="toio.device_interface.html#toio.device_interface.ScannerInterface" title="toio.device_interface.ScannerInterface"><em>ScannerInterface</em></a><em>]</em>) – scanner interface</p></li>
 <li><p><strong>scanner_args</strong> (<em>Sequence</em><em>[</em><em>Any</em><em>]</em>) – arguments given to the scanner.scan() function</p></li>
+<li><p><strong>**kwargs</strong> (<em>Any</em>) – keyword arguments given to the scanner.scan() function</p></li>
 </ul>
 </dd>
 </dl>
@@ -761,7 +768,7 @@ and ‘__aexit__’ handles the disconnection.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.</span></span><span class="sig-name descname"><span class="pre">MultipleToioCoreCubes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cubes:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">~typing.List[~toio.device_interface.CubeInfo],</span> <span class="pre">names:</span> <span class="pre">~typing.Sequence[str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">scanner:</span> <span class="pre">~typing.Type[~toio.device_interface.ScannerInterface]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'toio.scanner.ble.UniversalBleScanner'&gt;,</span> <span class="pre">scanner_args:</span> <span class="pre">~typing.Sequence[~typing_extensions.Any]</span> <span class="pre">=</span> <span class="pre">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/multi_cubes.html#MultipleToioCoreCubes"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.</span></span><span class="sig-name descname"><span class="pre">MultipleToioCoreCubes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cubes:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">~typing.List[~toio.device_interface.CubeInfo],</span> <span class="pre">names:</span> <span class="pre">~typing.Sequence[str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">scanner:</span> <span class="pre">~typing.Type[~toio.device_interface.ScannerInterface]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'toio.scanner.ble.UniversalBleScanner'&gt;,</span> <span class="pre">scanner_args:</span> <span class="pre">~typing.Sequence[~typing_extensions.Any]</span> <span class="pre">=</span> <span class="pre">(),</span> <span class="pre">**kwargs:</span> <span class="pre">~typing_extensions.Any</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/multi_cubes.html#MultipleToioCoreCubes"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Multiple cube control class</p>
 <p>This class is a wrapper to control multiple cubes easier.</p>
@@ -803,6 +810,12 @@ and ‘__aexit__’ handles the disconnection.</p>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">beta</span><span class="o">.</span><span class="n">api</span><span class="o">....</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>When keyword arguments are specified, they are passed to the scanner’s scan() function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># specifying scan strategy as keyword argument</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">with</span> <span class="n">MultipleToioCoreCubes</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;quick&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cubes</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">api</span><span class="o">....</span><span class="p">()</span>
+</pre></div>
+</div>
 <dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">OPERATION_INTERVAL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.5</span></em></dt>
@@ -810,7 +823,7 @@ and ‘__aexit__’ handles the disconnection.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cubes:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">~typing.List[~toio.device_interface.CubeInfo],</span> <span class="pre">names:</span> <span class="pre">~typing.Sequence[str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">scanner:</span> <span class="pre">~typing.Type[~toio.device_interface.ScannerInterface]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'toio.scanner.ble.UniversalBleScanner'&gt;,</span> <span class="pre">scanner_args:</span> <span class="pre">~typing.Sequence[~typing_extensions.Any]</span> <span class="pre">=</span> <span class="pre">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/multi_cubes.html#MultipleToioCoreCubes.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cubes:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">~typing.List[~toio.device_interface.CubeInfo],</span> <span class="pre">names:</span> <span class="pre">~typing.Sequence[str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">scanner:</span> <span class="pre">~typing.Type[~toio.device_interface.ScannerInterface]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'toio.scanner.ble.UniversalBleScanner'&gt;,</span> <span class="pre">scanner_args:</span> <span class="pre">~typing.Sequence[~typing_extensions.Any]</span> <span class="pre">=</span> <span class="pre">(),</span> <span class="pre">**kwargs:</span> <span class="pre">~typing_extensions.Any</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/multi_cubes.html#MultipleToioCoreCubes.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Initialize MultipleCubes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -819,6 +832,7 @@ and ‘__aexit__’ handles the disconnection.</p>
 <li><p><strong>names</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em>) – sequence of names of cubes</p></li>
 <li><p><strong>scanner</strong> (<em>Type</em><em>[</em><a class="reference internal" href="toio.device_interface.html#toio.device_interface.ScannerInterface" title="toio.device_interface.ScannerInterface"><em>ScannerInterface</em></a><em>]</em>) – scanner interface (default is UniversalBleScanner)</p></li>
 <li><p><strong>scanner_args</strong> (<em>Sequence</em><em>[</em><em>Any</em><em>]</em>) – arguments given to the scanner.scan() function</p></li>
+<li><p><strong>**kwargs</strong> (<em>Any</em>) – keyword arguments given to the scanner.scan() function</p></li>
 </ul>
 </dd>
 </dl>
@@ -4407,11 +4421,11 @@ The location is updated to the coordinates in the new coordinate system</p>
       <nav id="paginator" class="py-4" aria-label="Documentation navigation">
     <div class="container">
       <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
-            <a href="index.html" class="d-flex pe-5 px-lg-5 align-items-end" rel="prev" aria-label="Previous page: Welcome to toio.py’s documentation!">
+            <a href="index.html" class="d-flex pe-5 px-lg-5 align-items-end" rel="prev" aria-label="Previous page: toio.py documentation">
               <span class="prev-page"><i class="bi bi-caret-left"></i></span>
               <div class="d-none d-sm-flex flex-column">
                 <span class="text-small text-start text-muted">Previous</span>
-                <span class="underline">Welcome to toio.py’s documentation!</span>
+                <span class="underline">toio.py documentation</span>
               </div>
             </a>
           </li>
