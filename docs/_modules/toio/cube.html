@@ -310,7 +310,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">SUPPORTED_MAJOR_VERSION</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">SUPPORTED_MINOR_VERSION</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">SUPPORTED_MINOR_VERSION</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="n">_LOCK</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">asyncio</span><span class="o">.</span><span class="n">Lock</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="ToioCoreCube.create">
@@ -379,15 +379,23 @@
         <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">scanner</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">ScannerInterface</span><span class="p">]</span> <span class="o">=</span> <span class="n">UniversalBleScanner</span><span class="p">,</span>
         <span class="n">scanner_args</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize a ToioCoreCube instance.</span>
+
+<span class="sd">        When keyword arguments are specified, they are passed to the scanner&#39;s scan() function.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; async with ToioCoreCube(strategy=&quot;quick&quot;) as cube:</span>
+<span class="sd">            &gt;&gt;&gt;     cube.api....()</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            interface (Optional[CubeInitializer]): cube interface, cube info, or None</span>
 <span class="sd">            name (Optional[str]): cube name</span>
 <span class="sd">            scanner (Type[ScannerInterface]): scanner interface</span>
 <span class="sd">            scanner_args (Sequence[Any]): arguments given to the scanner.scan() function</span>
+<span class="sd">            **kwargs (Any): keyword arguments given to the scanner.scan() function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">ToioCoreCube</span><span class="o">.</span><span class="n">_LOCK</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">ToioCoreCube</span><span class="o">.</span><span class="n">_LOCK</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
@@ -406,6 +414,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_scanner</span> <span class="o">=</span> <span class="n">scanner</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_scanner_args</span> <span class="o">=</span> <span class="n">scanner_args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_scanner_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">protocol_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ProtocolVersion</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">max_retry_to_get_protocol_version</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span></div>
@@ -425,7 +434,9 @@
 <a class="viewcode-back" href="../../toio.cube.html#toio.ToioCoreCube.scan">[docs]</a>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">scan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scanning_required</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">device_list</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scanner</span><span class="p">()</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_scanner_args</span><span class="p">)</span>
+            <span class="n">device_list</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scanner</span><span class="p">()</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span>
+                <span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_scanner_args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_scanner_kwargs</span>
+            <span class="p">)</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">device_list</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">interface</span> <span class="o">=</span> <span class="n">device_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">interface</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>

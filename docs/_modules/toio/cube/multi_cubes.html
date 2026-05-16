@@ -264,6 +264,12 @@
 <span class="sd">    &gt;&gt;&gt;     alpha.api....()</span>
 <span class="sd">    &gt;&gt;&gt;     beta.api....()</span>
 
+<span class="sd">    When keyword arguments are specified, they are passed to the scanner&#39;s scan() function.</span>
+
+<span class="sd">    &gt;&gt;&gt; # specifying scan strategy as keyword argument</span>
+<span class="sd">    &gt;&gt;&gt; async with MultipleToioCoreCubes(2, strategy=&quot;quick&quot;) as cubes:</span>
+<span class="sd">    &gt;&gt;&gt;    cubes[0].api....()</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">OPERATION_INTERVAL</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -277,6 +283,7 @@
         <span class="n">names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">scanner</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">ScannerInterface</span><span class="p">]</span> <span class="o">=</span> <span class="n">UniversalBleScanner</span><span class="p">,</span>
         <span class="n">scanner_args</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize MultipleCubes</span>
@@ -286,6 +293,7 @@
 <span class="sd">            names (Optional[Sequence[str]]): sequence of names of cubes</span>
 <span class="sd">            scanner (Type[ScannerInterface]): scanner interface (default is UniversalBleScanner)</span>
 <span class="sd">            scanner_args (Sequence[Any]): arguments given to the scanner.scan() function</span>
+<span class="sd">            **kwargs (Any): keyword arguments given to the scanner.scan() function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">MultipleToioCoreCubes</span><span class="o">.</span><span class="n">_LOCK</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">MultipleToioCoreCubes</span><span class="o">.</span><span class="n">_LOCK</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
@@ -304,6 +312,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_names</span> <span class="o">=</span> <span class="n">names</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_scanner</span> <span class="o">=</span> <span class="n">scanner</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_scanner_args</span> <span class="o">=</span> <span class="n">scanner_args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_scanner_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cube_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ToioCoreCube</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span></div>
 
 
@@ -350,7 +359,7 @@
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scanning_required</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cube_num</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
             <span class="n">device_list</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scanner</span><span class="p">()</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_cube_num</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_scanner_args</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_cube_num</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_scanner_args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_scanner_kwargs</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_cubes</span> <span class="o">=</span> <span class="n">ToioCoreCube</span><span class="o">.</span><span class="n">create_cubes</span><span class="p">(</span><span class="n">device_list</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_scanning_required</span> <span class="o">=</span> <span class="kc">False</span></div>
