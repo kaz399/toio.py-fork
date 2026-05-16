@@ -95,6 +95,11 @@ class ResetConfiguration(CubeCommand):
     """
     Reset configuration command
 
+    Note:
+        The official technical specification (v2.5.0) states that this command
+        is 1 byte long (0x0F only), but testing with actual devices has shown
+        that it requires 2 bytes (0x0F 0x00) to function correctly.
+
     References:
         https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96
     """
