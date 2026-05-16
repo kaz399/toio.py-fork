@@ -28,6 +28,7 @@ from ..cube.api.configuration import (
     MagneticSensorFunction,
     PostureAngleDetectionCondition,
     PostureAngleDetectionType,
+    SpeakerMute,
 )
 from ..cube.api.id_information import (
     IdInformation,
@@ -704,3 +705,36 @@ class AsyncSimpleCube:
             return None
         else:
             return self._magnet.state
+
+    async def request_remote_power_off(self, time_s: int) -> None:
+        """request_remote_power_off.
+
+        Args:
+            time_s (int): Time until power off [s]
+
+        Returns:
+            None:
+        """
+        assert self._cube is not None
+        await self._cube.api.configuration.request_remote_power_off(time_s)
+
+    async def set_speaker_mute(self, mute: SpeakerMute) -> None:
+        """set_speaker_mute.
+
+        Args:
+            mute (SpeakerMute): Mute setting
+
+        Returns:
+            None:
+        """
+        assert self._cube is not None
+        await self._cube.api.configuration.set_speaker_mute(mute)
+
+    async def reset_configuration(self) -> None:
+        """reset_configuration.
+
+        Returns:
+            None:
+        """
+        assert self._cube is not None
+        await self._cube.api.configuration.reset_configuration()
