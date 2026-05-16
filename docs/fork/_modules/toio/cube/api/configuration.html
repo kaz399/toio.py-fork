@@ -315,6 +315,37 @@
 
 
 
+<div class="viewcode-block" id="ResetConfiguration">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResetConfiguration">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ResetConfiguration</span><span class="p">(</span><span class="n">CubeCommand</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reset configuration command</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        The official technical specification (v2.5.0) states that this command</span>
+<span class="sd">        is 1 byte long (0x0F only), but testing with actual devices has shown</span>
+<span class="sd">        that it requires 2 bytes (0x0F 0x00) to function correctly.</span>
+
+<span class="sd">    References:</span>
+<span class="sd">        https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_payload_id</span> <span class="o">=</span> <span class="mh">0x0F</span>
+
+<div class="viewcode-block" id="ResetConfiguration.__init__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResetConfiguration.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="ResetConfiguration.__bytes__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResetConfiguration.__bytes__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__bytes__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">bytes</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_payload_id</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">))</span></div>
+</div>
+
+
+
 <div class="viewcode-block" id="NotificationCondition">
 <a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.NotificationCondition">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">NotificationCondition</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
@@ -722,6 +753,71 @@
 
 
 
+<div class="viewcode-block" id="SpeakerMute">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.SpeakerMute">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SpeakerMute</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Speaker mute settings</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Unmute</span> <span class="o">=</span> <span class="mh">0x00</span>
+    <span class="n">MuteAll</span> <span class="o">=</span> <span class="mh">0x01</span>
+    <span class="n">MuteSystemOnly</span> <span class="o">=</span> <span class="mh">0x02</span></div>
+
+
+
+<div class="viewcode-block" id="SetSpeakerMute">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.SetSpeakerMute">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SetSpeakerMute</span><span class="p">(</span><span class="n">CubeCommand</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Speaker mute setting command</span>
+
+<span class="sd">    References:</span>
+<span class="sd">        https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_payload_id</span> <span class="o">=</span> <span class="mh">0x33</span>
+
+<div class="viewcode-block" id="SetSpeakerMute.__init__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.SetSpeakerMute.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mute</span><span class="p">:</span> <span class="n">SpeakerMute</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mute</span> <span class="o">=</span> <span class="n">mute</span></div>
+
+
+<div class="viewcode-block" id="SetSpeakerMute.__bytes__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.SetSpeakerMute.__bytes__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__bytes__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">bytes</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_payload_id</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mute</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RequestRemotePowerOff">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.RequestRemotePowerOff">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RequestRemotePowerOff</span><span class="p">(</span><span class="n">CubeCommand</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Request remote power off command</span>
+
+<span class="sd">    References:</span>
+<span class="sd">        https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_payload_id</span> <span class="o">=</span> <span class="mh">0x34</span>
+
+<div class="viewcode-block" id="RequestRemotePowerOff.__init__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.RequestRemotePowerOff.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_s</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_s</span> <span class="o">=</span> <span class="n">clip</span><span class="p">(</span><span class="n">time_s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RequestRemotePowerOff.__bytes__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.RequestRemotePowerOff.__bytes__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__bytes__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">bytes</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_payload_id</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_s</span><span class="p">))</span></div>
+</div>
+
+
+
 <div class="viewcode-block" id="ProtocolVersion">
 <a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ProtocolVersion">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ProtocolVersion</span><span class="p">(</span><span class="n">CubeResponse</span><span class="p">):</span>
@@ -764,6 +860,47 @@
 
 <div class="viewcode-block" id="ProtocolVersion.__str__">
 <a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ProtocolVersion.__str__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pprint</span><span class="o">.</span><span class="n">pformat</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ResponseConfigurationReset">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseConfigurationReset">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ResponseConfigurationReset</span><span class="p">(</span><span class="n">CubeResponse</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Configuration reset response</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        result (bool): Result of the command</span>
+
+<span class="sd">    References:</span>
+<span class="sd">        https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96%E3%81%AE%E5%BF%9C%E7%AD%94</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_payload_id</span> <span class="o">=</span> <span class="mh">0x8F</span>
+    <span class="n">_converter</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">Struct</span><span class="p">(</span><span class="s2">&quot;&lt;BBB&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ResponseConfigurationReset.is_myself">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseConfigurationReset.is_myself">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="n">GattReadData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ResponseConfigurationReset</span><span class="o">.</span><span class="n">_payload_id</span></div>
+
+
+<div class="viewcode-block" id="ResponseConfigurationReset.__init__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseConfigurationReset.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="n">GattReadData</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ResponseConfigurationReset</span><span class="o">.</span><span class="n">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_converter</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">==</span> <span class="mh">0x00</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;wrong payload&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ResponseConfigurationReset.__str__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseConfigurationReset.__str__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">pprint</span><span class="o">.</span><span class="n">pformat</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div>
 </div>
@@ -1103,8 +1240,91 @@
 
 
 
+<div class="viewcode-block" id="ResponseSpeakerMuteSettings">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseSpeakerMuteSettings">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ResponseSpeakerMuteSettings</span><span class="p">(</span><span class="n">CubeResponse</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Speaker mute setting response</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        result (bool): Result of the command</span>
+
+<span class="sd">    References:</span>
+<span class="sd">        https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%BF%9C%E7%AD%94</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_payload_id</span> <span class="o">=</span> <span class="mh">0xB3</span>
+    <span class="n">_converter</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">Struct</span><span class="p">(</span><span class="s2">&quot;&lt;BBB&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ResponseSpeakerMuteSettings.is_myself">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseSpeakerMuteSettings.is_myself">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="n">GattReadData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ResponseSpeakerMuteSettings</span><span class="o">.</span><span class="n">_payload_id</span></div>
+
+
+<div class="viewcode-block" id="ResponseSpeakerMuteSettings.__init__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseSpeakerMuteSettings.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="n">GattReadData</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ResponseSpeakerMuteSettings</span><span class="o">.</span><span class="n">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_converter</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">==</span> <span class="mh">0x00</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;wrong payload&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ResponseSpeakerMuteSettings.__str__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseSpeakerMuteSettings.__str__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pprint</span><span class="o">.</span><span class="n">pformat</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ResponseRemotePowerOff">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseRemotePowerOff">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ResponseRemotePowerOff</span><span class="p">(</span><span class="n">CubeResponse</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Response of remote power off request</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        result (bool): result</span>
+
+<span class="sd">    References:</span>
+<span class="sd">        https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82%E3%81%AE%E5%BF%9C%E7%AD%94</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_payload_id</span> <span class="o">=</span> <span class="mh">0xB4</span>
+    <span class="n">_converter</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">Struct</span><span class="p">(</span><span class="s2">&quot;&lt;BBB&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ResponseRemotePowerOff.is_myself">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseRemotePowerOff.is_myself">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="n">GattReadData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ResponseRemotePowerOff</span><span class="o">.</span><span class="n">_payload_id</span></div>
+
+
+<div class="viewcode-block" id="ResponseRemotePowerOff.__init__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseRemotePowerOff.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="n">GattReadData</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_converter</span><span class="o">.</span><span class="n">unpack_from</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">==</span> <span class="mh">0x00</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;wrong payload&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ResponseRemotePowerOff.__str__">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.ResponseRemotePowerOff.__str__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pprint</span><span class="o">.</span><span class="n">pformat</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div>
+</div>
+
+
+
 <span class="n">ConfigurationResponseType</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span>
     <span class="n">ProtocolVersion</span><span class="p">,</span>
+    <span class="n">ResponseConfigurationReset</span><span class="p">,</span>
     <span class="n">ResponseIdNotificationSettings</span><span class="p">,</span>
     <span class="n">ResponseIdMissedNotificationSettings</span><span class="p">,</span>
     <span class="n">ResponseMagneticSensorSettings</span><span class="p">,</span>
@@ -1113,6 +1333,8 @@
     <span class="n">ResponseConnectionIntervalRequest</span><span class="p">,</span>
     <span class="n">ResponseGettingRequestedConnectionInterval</span><span class="p">,</span>
     <span class="n">ResponseGettingCurrentConnectionInterval</span><span class="p">,</span>
+    <span class="n">ResponseSpeakerMuteSettings</span><span class="p">,</span>
+    <span class="n">ResponseRemotePowerOff</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Response types of configuration characteristic</span>
@@ -1135,6 +1357,8 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">is_my_data</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="n">GattReadData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ConfigurationResponseType</span><span class="p">]:</span>
         <span class="k">if</span> <span class="n">ProtocolVersion</span><span class="o">.</span><span class="n">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">ProtocolVersion</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ResponseConfigurationReset</span><span class="o">.</span><span class="n">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">ResponseConfigurationReset</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">ResponseIdNotificationSettings</span><span class="o">.</span><span class="n">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">ResponseIdNotificationSettings</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">ResponseIdMissedNotificationSettings</span><span class="o">.</span><span class="n">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
@@ -1151,6 +1375,10 @@
             <span class="k">return</span> <span class="n">ResponseGettingRequestedConnectionInterval</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">ResponseGettingCurrentConnectionInterval</span><span class="o">.</span><span class="n">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">ResponseGettingCurrentConnectionInterval</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ResponseSpeakerMuteSettings</span><span class="o">.</span><span class="n">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">ResponseSpeakerMuteSettings</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ResponseRemotePowerOff</span><span class="o">.</span><span class="n">is_myself</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">ResponseRemotePowerOff</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
@@ -1405,6 +1633,66 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">command</span> <span class="o">=</span> <span class="n">GetCurrentConnectionIntervalValue</span><span class="p">()</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">command</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Configuration.request_remote_power_off">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.Configuration.request_remote_power_off">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">request_remote_power_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_s</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send remote power off request command</span>
+
+<span class="sd">        This function DO NOT return response payload.</span>
+<span class="sd">        Receive the result by notification.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            time_s (int): time until power off [s]</span>
+
+<span class="sd">        References:</span>
+<span class="sd">            https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="n">RequestRemotePowerOff</span><span class="p">(</span><span class="n">time_s</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">command</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Configuration.set_speaker_mute">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.Configuration.set_speaker_mute">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_speaker_mute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mute</span><span class="p">:</span> <span class="n">SpeakerMute</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send speaker mute setting command</span>
+
+<span class="sd">        This function DO NOT return response payload.</span>
+<span class="sd">        Receive the result by notification.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            To write this setting, the function button must be pressed.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            mute (SpeakerMute): Mute setting</span>
+
+<span class="sd">        References:</span>
+<span class="sd">            https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="n">SetSpeakerMute</span><span class="p">(</span><span class="n">mute</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">command</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Configuration.reset_configuration">
+<a class="viewcode-back" href="../../../../toio.cube.api.configuration.html#toio.Configuration.reset_configuration">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">reset_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send configuration reset command</span>
+
+<span class="sd">        This function DO NOT return response payload.</span>
+<span class="sd">        Receive the result by notification.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            To write this setting, the function button must be pressed.</span>
+
+<span class="sd">        References:</span>
+<span class="sd">            https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="n">ResetConfiguration</span><span class="p">()</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">command</span><span class="p">))</span></div>
 </div>
 
 </pre></div>
@@ -1448,7 +1736,7 @@
           </ul>
         
         <div class="built-with pt-2">
-          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.8</a>
+          Built with <a href="http://sphinx-doc.org">Sphinx 7.4.7</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.8</a>
         </div>
       </div>
     </div>
@@ -1472,7 +1760,7 @@
   </div>
 </div>
     <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/docs-versions.js?v=08b0cbfb"></script>
     <script src="../../../../_static/sphinx-nefertiti.min.js?v=f7f548f2"></script>

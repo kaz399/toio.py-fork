@@ -1,6 +1,6 @@
 [project]
 name = "toio-py-fork"
-version = "1.1.0.post2.dev1"
+version = "1.1.0.post2.dev2"
 description = "Unofficial maintained fork of toio.py for controlling toio Core Cube"
 authors = [
     {name = "Sony Interactive Entertainment"},
@@ -47,7 +47,7 @@ dev = [
     "autopep8>=2.0.2",
     "black>=24.4.2",
     "ipykernel>=6.29.3",
-    "sphinx>=7.1.0",
+    "sphinx<8.0.0",
     "pytest-cov>=5.0.0",
     "coverage>=7.5.1",
     "flake8>=7.0.0",

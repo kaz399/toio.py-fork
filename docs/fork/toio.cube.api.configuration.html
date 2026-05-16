@@ -305,8 +305,42 @@
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResetConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">ResetConfiguration</span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResetConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResetConfiguration" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="toio.cube.api.base_class.html#toio.cube.api.base_class.CubeCommand" title="toio.cube.api.base_class.CubeCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">CubeCommand</span></code></a></p>
+<p>Reset configuration command</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The official technical specification (v2.5.0) states that this command
+is 1 byte long (0x0F only), but testing with actual devices has shown
+that it requires 2 bytes (0x0F 0x00) to function correctly.</p>
+</div>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96">https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResetConfiguration.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResetConfiguration.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResetConfiguration.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResetConfiguration.__bytes__">
+<span class="sig-name descname"><span class="pre">__bytes__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResetConfiguration.__bytes__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResetConfiguration.__bytes__" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the byte representation of this class to be sent to cube.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>byte representation of this class to be sent to cube.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.NotificationCondition">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">NotificationCondition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#NotificationCondition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.NotificationCondition" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">NotificationCondition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#NotificationCondition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.NotificationCondition" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
 <p>Notification conditions of ID notification</p>
 <p class="rubric">References</p>
@@ -386,9 +420,8 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.MagneticSensorFunction">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">MagneticSensorFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#MagneticSensorFunction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.MagneticSensorFunction" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">MagneticSensorFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#MagneticSensorFunction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.MagneticSensorFunction" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
-<p>An enumeration.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.MagneticSensorFunction.Disable">
 <span class="sig-name descname"><span class="pre">Disable</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#toio.cube.api.configuration.MagneticSensorFunction.Disable" title="Link to this definition">¶</a></dt>
@@ -408,9 +441,8 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.MagneticSensorCondition">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">MagneticSensorCondition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#MagneticSensorCondition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.MagneticSensorCondition" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">MagneticSensorCondition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#MagneticSensorCondition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.MagneticSensorCondition" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
-<p>An enumeration.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.MagneticSensorCondition.Always">
 <span class="sig-name descname"><span class="pre">Always</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#toio.cube.api.configuration.MagneticSensorCondition.Always" title="Link to this definition">¶</a></dt>
@@ -453,9 +485,8 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.MotorSpeedInformationAcquisitionState">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">MotorSpeedInformationAcquisitionState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#MotorSpeedInformationAcquisitionState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.MotorSpeedInformationAcquisitionState" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">MotorSpeedInformationAcquisitionState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#MotorSpeedInformationAcquisitionState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.MotorSpeedInformationAcquisitionState" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
-<p>An enumeration.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.MotorSpeedInformationAcquisitionState.Disable">
 <span class="sig-name descname"><span class="pre">Disable</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#toio.cube.api.configuration.MotorSpeedInformationAcquisitionState.Disable" title="Link to this definition">¶</a></dt>
@@ -498,9 +529,8 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.PostureAngleDetectionType">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">PostureAngleDetectionType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#PostureAngleDetectionType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.PostureAngleDetectionType" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">PostureAngleDetectionType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#PostureAngleDetectionType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.PostureAngleDetectionType" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
-<p>An enumeration.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.PostureAngleDetectionType.Euler">
 <span class="sig-name descname"><span class="pre">Euler</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#toio.cube.api.configuration.PostureAngleDetectionType.Euler" title="Link to this definition">¶</a></dt>
@@ -520,7 +550,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.PostureAngleDetectionCondition">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">PostureAngleDetectionCondition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#PostureAngleDetectionCondition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.PostureAngleDetectionCondition" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">PostureAngleDetectionCondition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#PostureAngleDetectionCondition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.PostureAngleDetectionCondition" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
 <p>Notification condition of posture angle detection</p>
 <p class="rubric">References</p>
@@ -756,6 +786,84 @@
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.SpeakerMute">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">SpeakerMute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#SpeakerMute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.SpeakerMute" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>Speaker mute settings</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.SpeakerMute.Unmute">
+<span class="sig-name descname"><span class="pre">Unmute</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#toio.cube.api.configuration.SpeakerMute.Unmute" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.SpeakerMute.MuteAll">
+<span class="sig-name descname"><span class="pre">MuteAll</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#toio.cube.api.configuration.SpeakerMute.MuteAll" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.SpeakerMute.MuteSystemOnly">
+<span class="sig-name descname"><span class="pre">MuteSystemOnly</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#toio.cube.api.configuration.SpeakerMute.MuteSystemOnly" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.SetSpeakerMute">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">SetSpeakerMute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toio.cube.api.configuration.SpeakerMute" title="toio.cube.api.configuration.SpeakerMute"><span class="pre">SpeakerMute</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#SetSpeakerMute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.SetSpeakerMute" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="toio.cube.api.base_class.html#toio.cube.api.base_class.CubeCommand" title="toio.cube.api.base_class.CubeCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">CubeCommand</span></code></a></p>
+<p>Speaker mute setting command</p>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A">https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.SetSpeakerMute.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toio.cube.api.configuration.SpeakerMute" title="toio.cube.api.configuration.SpeakerMute"><span class="pre">SpeakerMute</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#SetSpeakerMute.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.SetSpeakerMute.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.SetSpeakerMute.__bytes__">
+<span class="sig-name descname"><span class="pre">__bytes__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#SetSpeakerMute.__bytes__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.SetSpeakerMute.__bytes__" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the byte representation of this class to be sent to cube.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>byte representation of this class to be sent to cube.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.RequestRemotePowerOff">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">RequestRemotePowerOff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#RequestRemotePowerOff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.RequestRemotePowerOff" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="toio.cube.api.base_class.html#toio.cube.api.base_class.CubeCommand" title="toio.cube.api.base_class.CubeCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">CubeCommand</span></code></a></p>
+<p>Request remote power off command</p>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82">https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.RequestRemotePowerOff.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#RequestRemotePowerOff.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.RequestRemotePowerOff.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.RequestRemotePowerOff.__bytes__">
+<span class="sig-name descname"><span class="pre">__bytes__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#RequestRemotePowerOff.__bytes__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.RequestRemotePowerOff.__bytes__" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the byte representation of this class to be sent to cube.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>byte representation of this class to be sent to cube.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.ProtocolVersion">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">ProtocolVersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ProtocolVersion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ProtocolVersion" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="toio.cube.api.base_class.html#toio.cube.api.base_class.CubeResponse" title="toio.cube.api.base_class.CubeResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">CubeResponse</span></code></a></p>
@@ -794,6 +902,50 @@ and returns it.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.ProtocolVersion.__str__">
 <span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ProtocolVersion.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ProtocolVersion.__str__" title="Link to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseConfigurationReset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">ResponseConfigurationReset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseConfigurationReset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseConfigurationReset" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="toio.cube.api.base_class.html#toio.cube.api.base_class.CubeResponse" title="toio.cube.api.base_class.CubeResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">CubeResponse</span></code></a></p>
+<p>Configuration reset response</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseConfigurationReset.result">
+<span class="sig-name descname"><span class="pre">result</span></span><a class="headerlink" href="#toio.cube.api.configuration.ResponseConfigurationReset.result" title="Link to this definition">¶</a></dt>
+<dd><p>Result of the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96%E3%81%AE%E5%BF%9C%E7%AD%94">https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96%E3%81%AE%E5%BF%9C%E7%AD%94</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseConfigurationReset.is_myself">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_myself</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseConfigurationReset.is_myself"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseConfigurationReset.is_myself" title="Link to this definition">¶</a></dt>
+<dd><p>If argument data is a byte representation of this class,
+this function converts the byte representation to an object
+and returns it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>GattReadData</em>) – received data from the cube.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseConfigurationReset.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseConfigurationReset.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseConfigurationReset.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseConfigurationReset.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseConfigurationReset.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseConfigurationReset.__str__" title="Link to this definition">¶</a></dt>
 <dd><p>Return str(self).</p>
 </dd></dl>
 
@@ -1173,11 +1325,98 @@ and returns it.</p>
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseSpeakerMuteSettings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">ResponseSpeakerMuteSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseSpeakerMuteSettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="toio.cube.api.base_class.html#toio.cube.api.base_class.CubeResponse" title="toio.cube.api.base_class.CubeResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">CubeResponse</span></code></a></p>
+<p>Speaker mute setting response</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseSpeakerMuteSettings.result">
+<span class="sig-name descname"><span class="pre">result</span></span><a class="headerlink" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings.result" title="Link to this definition">¶</a></dt>
+<dd><p>Result of the command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%BF%9C%E7%AD%94">https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%BF%9C%E7%AD%94</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseSpeakerMuteSettings.is_myself">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_myself</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseSpeakerMuteSettings.is_myself"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings.is_myself" title="Link to this definition">¶</a></dt>
+<dd><p>If argument data is a byte representation of this class,
+this function converts the byte representation to an object
+and returns it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>GattReadData</em>) – received data from the cube.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseSpeakerMuteSettings.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseSpeakerMuteSettings.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseSpeakerMuteSettings.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseSpeakerMuteSettings.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings.__str__" title="Link to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseRemotePowerOff">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">ResponseRemotePowerOff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseRemotePowerOff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseRemotePowerOff" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="toio.cube.api.base_class.html#toio.cube.api.base_class.CubeResponse" title="toio.cube.api.base_class.CubeResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">CubeResponse</span></code></a></p>
+<p>Response of remote power off request</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseRemotePowerOff.result">
+<span class="sig-name descname"><span class="pre">result</span></span><a class="headerlink" href="#toio.cube.api.configuration.ResponseRemotePowerOff.result" title="Link to this definition">¶</a></dt>
+<dd><p>result</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82%E3%81%AE%E5%BF%9C%E7%AD%94">https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82%E3%81%AE%E5%BF%9C%E7%AD%94</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseRemotePowerOff.is_myself">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_myself</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseRemotePowerOff.is_myself"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseRemotePowerOff.is_myself" title="Link to this definition">¶</a></dt>
+<dd><p>If argument data is a byte representation of this class,
+this function converts the byte representation to an object
+and returns it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>GattReadData</em>) – received data from the cube.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseRemotePowerOff.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseRemotePowerOff.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseRemotePowerOff.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.ResponseRemotePowerOff.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#ResponseRemotePowerOff.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.ResponseRemotePowerOff.__str__" title="Link to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py data">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.ConfigurationResponseType">
-<span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">ConfigurationResponseType</span></span><a class="headerlink" href="#toio.cube.api.configuration.ConfigurationResponseType" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">toio.cube.api.configuration.</span></span><span class="sig-name descname"><span class="pre">ConfigurationResponseType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">TypeAlias</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">toio.cube.api.configuration.ProtocolVersion</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponseConfigurationReset</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponseIdNotificationSettings</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponseIdMissedNotificationSettings</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponseMagneticSensorSettings</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponseMotorSpeedInformationAcquisitionSettings</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponsePostureAngleDetectionSettings</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponseConnectionIntervalRequest</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponseGettingRequestedConnectionInterval</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponseGettingCurrentConnectionInterval</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponseSpeakerMuteSettings</span> <span class="pre">|</span> <span class="pre">toio.cube.api.configuration.ResponseRemotePowerOff</span></em><a class="headerlink" href="#toio.cube.api.configuration.ConfigurationResponseType" title="Link to this definition">¶</a></dt>
 <dd><p>Response types of configuration characteristic</p>
-<p>alias of <a class="reference internal" href="#toio.cube.api.configuration.ProtocolVersion" title="toio.cube.api.configuration.ProtocolVersion"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProtocolVersion</span></code></a> | <a class="reference internal" href="#toio.cube.api.configuration.ResponseIdNotificationSettings" title="toio.cube.api.configuration.ResponseIdNotificationSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseIdNotificationSettings</span></code></a> | <a class="reference internal" href="#toio.cube.api.configuration.ResponseIdMissedNotificationSettings" title="toio.cube.api.configuration.ResponseIdMissedNotificationSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseIdMissedNotificationSettings</span></code></a> | <a class="reference internal" href="#toio.cube.api.configuration.ResponseMagneticSensorSettings" title="toio.cube.api.configuration.ResponseMagneticSensorSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseMagneticSensorSettings</span></code></a> | <a class="reference internal" href="#toio.cube.api.configuration.ResponseMotorSpeedInformationAcquisitionSettings" title="toio.cube.api.configuration.ResponseMotorSpeedInformationAcquisitionSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseMotorSpeedInformationAcquisitionSettings</span></code></a> | <a class="reference internal" href="#toio.cube.api.configuration.ResponsePostureAngleDetectionSettings" title="toio.cube.api.configuration.ResponsePostureAngleDetectionSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponsePostureAngleDetectionSettings</span></code></a> | <a class="reference internal" href="#toio.cube.api.configuration.ResponseConnectionIntervalRequest" title="toio.cube.api.configuration.ResponseConnectionIntervalRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseConnectionIntervalRequest</span></code></a> | <a class="reference internal" href="#toio.cube.api.configuration.ResponseGettingRequestedConnectionInterval" title="toio.cube.api.configuration.ResponseGettingRequestedConnectionInterval"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseGettingRequestedConnectionInterval</span></code></a> | <a class="reference internal" href="#toio.cube.api.configuration.ResponseGettingCurrentConnectionInterval" title="toio.cube.api.configuration.ResponseGettingCurrentConnectionInterval"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResponseGettingCurrentConnectionInterval</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
@@ -1189,7 +1428,7 @@ and returns it.</p>
 <p><a class="reference external" href="https://toio.github.io/toio-spec/en/docs/ble_configuration">https://toio.github.io/toio-spec/en/docs/ble_configuration</a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="toio.cube.api.configuration.Configuration.is_my_data">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_my_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#toio.cube.api.configuration.ProtocolVersion" title="toio.cube.api.configuration.ProtocolVersion"><span class="pre">ProtocolVersion</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseIdNotificationSettings" title="toio.cube.api.configuration.ResponseIdNotificationSettings"><span class="pre">ResponseIdNotificationSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseIdMissedNotificationSettings" title="toio.cube.api.configuration.ResponseIdMissedNotificationSettings"><span class="pre">ResponseIdMissedNotificationSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseMagneticSensorSettings" title="toio.cube.api.configuration.ResponseMagneticSensorSettings"><span class="pre">ResponseMagneticSensorSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseMotorSpeedInformationAcquisitionSettings" title="toio.cube.api.configuration.ResponseMotorSpeedInformationAcquisitionSettings"><span class="pre">ResponseMotorSpeedInformationAcquisitionSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponsePostureAngleDetectionSettings" title="toio.cube.api.configuration.ResponsePostureAngleDetectionSettings"><span class="pre">ResponsePostureAngleDetectionSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseConnectionIntervalRequest" title="toio.cube.api.configuration.ResponseConnectionIntervalRequest"><span class="pre">ResponseConnectionIntervalRequest</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseGettingRequestedConnectionInterval" title="toio.cube.api.configuration.ResponseGettingRequestedConnectionInterval"><span class="pre">ResponseGettingRequestedConnectionInterval</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseGettingCurrentConnectionInterval" title="toio.cube.api.configuration.ResponseGettingCurrentConnectionInterval"><span class="pre">ResponseGettingCurrentConnectionInterval</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#Configuration.is_my_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.Configuration.is_my_data" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_my_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytearray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#toio.cube.api.configuration.ProtocolVersion" title="toio.cube.api.configuration.ProtocolVersion"><span class="pre">ProtocolVersion</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseConfigurationReset" title="toio.cube.api.configuration.ResponseConfigurationReset"><span class="pre">ResponseConfigurationReset</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseIdNotificationSettings" title="toio.cube.api.configuration.ResponseIdNotificationSettings"><span class="pre">ResponseIdNotificationSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseIdMissedNotificationSettings" title="toio.cube.api.configuration.ResponseIdMissedNotificationSettings"><span class="pre">ResponseIdMissedNotificationSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseMagneticSensorSettings" title="toio.cube.api.configuration.ResponseMagneticSensorSettings"><span class="pre">ResponseMagneticSensorSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseMotorSpeedInformationAcquisitionSettings" title="toio.cube.api.configuration.ResponseMotorSpeedInformationAcquisitionSettings"><span class="pre">ResponseMotorSpeedInformationAcquisitionSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponsePostureAngleDetectionSettings" title="toio.cube.api.configuration.ResponsePostureAngleDetectionSettings"><span class="pre">ResponsePostureAngleDetectionSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseConnectionIntervalRequest" title="toio.cube.api.configuration.ResponseConnectionIntervalRequest"><span class="pre">ResponseConnectionIntervalRequest</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseGettingRequestedConnectionInterval" title="toio.cube.api.configuration.ResponseGettingRequestedConnectionInterval"><span class="pre">ResponseGettingRequestedConnectionInterval</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseGettingCurrentConnectionInterval" title="toio.cube.api.configuration.ResponseGettingCurrentConnectionInterval"><span class="pre">ResponseGettingCurrentConnectionInterval</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings" title="toio.cube.api.configuration.ResponseSpeakerMuteSettings"><span class="pre">ResponseSpeakerMuteSettings</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#toio.cube.api.configuration.ResponseRemotePowerOff" title="toio.cube.api.configuration.ResponseRemotePowerOff"><span class="pre">ResponseRemotePowerOff</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#Configuration.is_my_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.Configuration.is_my_data" title="Link to this definition">¶</a></dt>
 <dd><p>If payload is my characteristic response, this function returns
 CubeResponse object. Otherwise, it returns None.</p>
 <dl class="field-list simple">
@@ -1385,6 +1624,54 @@ one of the following occurs:
 <p><a class="reference external" href="https://toio.github.io/toio-spec/en/docs/ble_configuration#obtaining-the-actual-connection-interval-value">https://toio.github.io/toio-spec/en/docs/ble_configuration#obtaining-the-actual-connection-interval-value</a>-</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.Configuration.request_remote_power_off">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">request_remote_power_off</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#Configuration.request_remote_power_off"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.Configuration.request_remote_power_off" title="Link to this definition">¶</a></dt>
+<dd><p>Send remote power off request command</p>
+<p>This function DO NOT return response payload.
+Receive the result by notification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time_s</strong> (<em>int</em>) – time until power off [s]</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82">https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.Configuration.set_speaker_mute">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_speaker_mute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toio.cube.api.configuration.SpeakerMute" title="toio.cube.api.configuration.SpeakerMute"><span class="pre">SpeakerMute</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#Configuration.set_speaker_mute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.Configuration.set_speaker_mute" title="Link to this definition">¶</a></dt>
+<dd><p>Send speaker mute setting command</p>
+<p>This function DO NOT return response payload.
+Receive the result by notification.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To write this setting, the function button must be pressed.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mute</strong> (<a class="reference internal" href="#toio.cube.api.configuration.SpeakerMute" title="toio.cube.api.configuration.SpeakerMute"><em>SpeakerMute</em></a>) – Mute setting</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A">https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toio.cube.api.configuration.Configuration.reset_configuration">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reset_configuration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/toio/cube/api/configuration.html#Configuration.reset_configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.configuration.Configuration.reset_configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Send configuration reset command</p>
+<p>This function DO NOT return response payload.
+Receive the result by notification.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To write this setting, the function button must be pressed.</p>
+</div>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96">https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96</a></p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -1421,6 +1708,11 @@ one of the following occurs:
 <li><a class="reference internal" href="#toio.cube.api.configuration.SetDoubleTapDetectionTimeInterval"><code class="docutils literal notranslate"><span class="pre">SetDoubleTapDetectionTimeInterval</span></code></a><ul>
 <li><a class="reference internal" href="#toio.cube.api.configuration.SetDoubleTapDetectionTimeInterval.__init__"><code class="docutils literal notranslate"><span class="pre">SetDoubleTapDetectionTimeInterval.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.SetDoubleTapDetectionTimeInterval.__bytes__"><code class="docutils literal notranslate"><span class="pre">SetDoubleTapDetectionTimeInterval.__bytes__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResetConfiguration"><code class="docutils literal notranslate"><span class="pre">ResetConfiguration</span></code></a><ul>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResetConfiguration.__init__"><code class="docutils literal notranslate"><span class="pre">ResetConfiguration.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResetConfiguration.__bytes__"><code class="docutils literal notranslate"><span class="pre">ResetConfiguration.__bytes__()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.NotificationCondition"><code class="docutils literal notranslate"><span class="pre">NotificationCondition</span></code></a><ul>
@@ -1510,11 +1802,34 @@ one of the following occurs:
 <li><a class="reference internal" href="#toio.cube.api.configuration.GetCurrentConnectionIntervalValue.__bytes__"><code class="docutils literal notranslate"><span class="pre">GetCurrentConnectionIntervalValue.__bytes__()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.SpeakerMute"><code class="docutils literal notranslate"><span class="pre">SpeakerMute</span></code></a><ul>
+<li><a class="reference internal" href="#toio.cube.api.configuration.SpeakerMute.Unmute"><code class="docutils literal notranslate"><span class="pre">SpeakerMute.Unmute</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.SpeakerMute.MuteAll"><code class="docutils literal notranslate"><span class="pre">SpeakerMute.MuteAll</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.SpeakerMute.MuteSystemOnly"><code class="docutils literal notranslate"><span class="pre">SpeakerMute.MuteSystemOnly</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.SetSpeakerMute"><code class="docutils literal notranslate"><span class="pre">SetSpeakerMute</span></code></a><ul>
+<li><a class="reference internal" href="#toio.cube.api.configuration.SetSpeakerMute.__init__"><code class="docutils literal notranslate"><span class="pre">SetSpeakerMute.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.SetSpeakerMute.__bytes__"><code class="docutils literal notranslate"><span class="pre">SetSpeakerMute.__bytes__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.RequestRemotePowerOff"><code class="docutils literal notranslate"><span class="pre">RequestRemotePowerOff</span></code></a><ul>
+<li><a class="reference internal" href="#toio.cube.api.configuration.RequestRemotePowerOff.__init__"><code class="docutils literal notranslate"><span class="pre">RequestRemotePowerOff.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.RequestRemotePowerOff.__bytes__"><code class="docutils literal notranslate"><span class="pre">RequestRemotePowerOff.__bytes__()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.ProtocolVersion"><code class="docutils literal notranslate"><span class="pre">ProtocolVersion</span></code></a><ul>
 <li><a class="reference internal" href="#toio.cube.api.configuration.ProtocolVersion.version"><code class="docutils literal notranslate"><span class="pre">ProtocolVersion.version</span></code></a></li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.ProtocolVersion.is_myself"><code class="docutils literal notranslate"><span class="pre">ProtocolVersion.is_myself()</span></code></a></li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.ProtocolVersion.__init__"><code class="docutils literal notranslate"><span class="pre">ProtocolVersion.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.ProtocolVersion.__str__"><code class="docutils literal notranslate"><span class="pre">ProtocolVersion.__str__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseConfigurationReset"><code class="docutils literal notranslate"><span class="pre">ResponseConfigurationReset</span></code></a><ul>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseConfigurationReset.result"><code class="docutils literal notranslate"><span class="pre">ResponseConfigurationReset.result</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseConfigurationReset.is_myself"><code class="docutils literal notranslate"><span class="pre">ResponseConfigurationReset.is_myself()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseConfigurationReset.__init__"><code class="docutils literal notranslate"><span class="pre">ResponseConfigurationReset.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseConfigurationReset.__str__"><code class="docutils literal notranslate"><span class="pre">ResponseConfigurationReset.__str__()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.ResponseIdNotificationSettings"><code class="docutils literal notranslate"><span class="pre">ResponseIdNotificationSettings</span></code></a><ul>
@@ -1575,6 +1890,20 @@ one of the following occurs:
 <li><a class="reference internal" href="#toio.cube.api.configuration.ResponseGettingCurrentConnectionInterval.__str__"><code class="docutils literal notranslate"><span class="pre">ResponseGettingCurrentConnectionInterval.__str__()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings"><code class="docutils literal notranslate"><span class="pre">ResponseSpeakerMuteSettings</span></code></a><ul>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings.result"><code class="docutils literal notranslate"><span class="pre">ResponseSpeakerMuteSettings.result</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings.is_myself"><code class="docutils literal notranslate"><span class="pre">ResponseSpeakerMuteSettings.is_myself()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings.__init__"><code class="docutils literal notranslate"><span class="pre">ResponseSpeakerMuteSettings.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseSpeakerMuteSettings.__str__"><code class="docutils literal notranslate"><span class="pre">ResponseSpeakerMuteSettings.__str__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseRemotePowerOff"><code class="docutils literal notranslate"><span class="pre">ResponseRemotePowerOff</span></code></a><ul>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseRemotePowerOff.result"><code class="docutils literal notranslate"><span class="pre">ResponseRemotePowerOff.result</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseRemotePowerOff.is_myself"><code class="docutils literal notranslate"><span class="pre">ResponseRemotePowerOff.is_myself()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseRemotePowerOff.__init__"><code class="docutils literal notranslate"><span class="pre">ResponseRemotePowerOff.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.ResponseRemotePowerOff.__str__"><code class="docutils literal notranslate"><span class="pre">ResponseRemotePowerOff.__str__()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.ConfigurationResponseType"><code class="docutils literal notranslate"><span class="pre">ConfigurationResponseType</span></code></a></li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.Configuration"><code class="docutils literal notranslate"><span class="pre">Configuration</span></code></a><ul>
 <li><a class="reference internal" href="#toio.cube.api.configuration.Configuration.is_my_data"><code class="docutils literal notranslate"><span class="pre">Configuration.is_my_data()</span></code></a></li>
@@ -1591,6 +1920,9 @@ one of the following occurs:
 <li><a class="reference internal" href="#toio.cube.api.configuration.Configuration.request_to_change_connection_interval"><code class="docutils literal notranslate"><span class="pre">Configuration.request_to_change_connection_interval()</span></code></a></li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.Configuration.get_requested_connection_interval"><code class="docutils literal notranslate"><span class="pre">Configuration.get_requested_connection_interval()</span></code></a></li>
 <li><a class="reference internal" href="#toio.cube.api.configuration.Configuration.get_current_connection_interval"><code class="docutils literal notranslate"><span class="pre">Configuration.get_current_connection_interval()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.Configuration.request_remote_power_off"><code class="docutils literal notranslate"><span class="pre">Configuration.request_remote_power_off()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.Configuration.set_speaker_mute"><code class="docutils literal notranslate"><span class="pre">Configuration.set_speaker_mute()</span></code></a></li>
+<li><a class="reference internal" href="#toio.cube.api.configuration.Configuration.reset_configuration"><code class="docutils literal notranslate"><span class="pre">Configuration.reset_configuration()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1646,7 +1978,7 @@ one of the following occurs:
           </ul>
         
         <div class="built-with pt-2">
-          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.8</a>
+          Built with <a href="http://sphinx-doc.org">Sphinx 7.4.7</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.8</a>
         </div>
       </div>
     </div>
@@ -1670,7 +2002,7 @@ one of the following occurs:
   </div>
 </div>
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/docs-versions.js?v=08b0cbfb"></script>
     <script src="_static/sphinx-nefertiti.min.js?v=f7f548f2"></script>

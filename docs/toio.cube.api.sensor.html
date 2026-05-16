@@ -217,9 +217,8 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="toio.cube.api.sensor.PostureDataType">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.sensor.</span></span><span class="sig-name descname"><span class="pre">PostureDataType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/sensor.html#PostureDataType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.sensor.PostureDataType" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.sensor.</span></span><span class="sig-name descname"><span class="pre">PostureDataType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/sensor.html#PostureDataType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.sensor.PostureDataType" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
-<p>An enumeration.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="toio.cube.api.sensor.PostureDataType.Euler">
 <span class="sig-name descname"><span class="pre">Euler</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#toio.cube.api.sensor.PostureDataType.Euler" title="Link to this definition">¶</a></dt>
@@ -295,7 +294,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="toio.cube.api.sensor.Posture">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.sensor.</span></span><span class="sig-name descname"><span class="pre">Posture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/sensor.html#Posture"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.sensor.Posture" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toio.cube.api.sensor.</span></span><span class="sig-name descname"><span class="pre">Posture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/toio/cube/api/sensor.html#Posture"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toio.cube.api.sensor.Posture" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
 <p>Orientation of the cube.</p>
 <dl class="simple">
@@ -719,9 +718,8 @@ and returns it.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="toio.cube.api.sensor.SensorResponseType">
-<span class="sig-prename descclassname"><span class="pre">toio.cube.api.sensor.</span></span><span class="sig-name descname"><span class="pre">SensorResponseType</span></span><a class="headerlink" href="#toio.cube.api.sensor.SensorResponseType" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">toio.cube.api.sensor.</span></span><span class="sig-name descname"><span class="pre">SensorResponseType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">TypeAlias</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">toio.cube.api.sensor.MotionDetectionData</span> <span class="pre">|</span> <span class="pre">toio.cube.api.sensor.PostureAngleEulerData</span> <span class="pre">|</span> <span class="pre">toio.cube.api.sensor.PostureAngleQuaternionsData</span> <span class="pre">|</span> <span class="pre">toio.cube.api.sensor.PostureAngleHighPrecisionEulerData</span> <span class="pre">|</span> <span class="pre">toio.cube.api.sensor.MagneticSensorData</span></em><a class="headerlink" href="#toio.cube.api.sensor.SensorResponseType" title="Link to this definition">¶</a></dt>
 <dd><p>Response types of Sensor characteristic</p>
-<p>alias of <a class="reference internal" href="#toio.cube.api.sensor.MotionDetectionData" title="toio.cube.api.sensor.MotionDetectionData"><code class="xref py py-class docutils literal notranslate"><span class="pre">MotionDetectionData</span></code></a> | <a class="reference internal" href="#toio.cube.api.sensor.PostureAngleEulerData" title="toio.cube.api.sensor.PostureAngleEulerData"><code class="xref py py-class docutils literal notranslate"><span class="pre">PostureAngleEulerData</span></code></a> | <a class="reference internal" href="#toio.cube.api.sensor.PostureAngleQuaternionsData" title="toio.cube.api.sensor.PostureAngleQuaternionsData"><code class="xref py py-class docutils literal notranslate"><span class="pre">PostureAngleQuaternionsData</span></code></a> | <a class="reference internal" href="#toio.cube.api.sensor.PostureAngleHighPrecisionEulerData" title="toio.cube.api.sensor.PostureAngleHighPrecisionEulerData"><code class="xref py py-class docutils literal notranslate"><span class="pre">PostureAngleHighPrecisionEulerData</span></code></a> | <a class="reference internal" href="#toio.cube.api.sensor.MagneticSensorData" title="toio.cube.api.sensor.MagneticSensorData"><code class="xref py py-class docutils literal notranslate"><span class="pre">MagneticSensorData</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
@@ -941,7 +939,7 @@ CubeResponse object. Otherwise, it returns None.</p>
           </ul>
         
         <div class="built-with pt-2">
-          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.8</a>
+          Built with <a href="http://sphinx-doc.org">Sphinx 7.4.7</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.8</a>
         </div>
       </div>
     </div>
@@ -965,7 +963,7 @@ CubeResponse object. Otherwise, it returns None.</p>
   </div>
 </div>
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/docs-versions.js?v=08b0cbfb"></script>
     <script src="_static/sphinx-nefertiti.min.js?v=f7f548f2"></script>
