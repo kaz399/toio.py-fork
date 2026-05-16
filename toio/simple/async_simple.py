@@ -645,6 +645,27 @@ class AsyncSimpleCube:
             await self.sleep(duration)
             await self._cube.api.indicator.turn_off_all()
 
+    async def turn_on_smooth_flashing(
+        self, r: int, g: int, b: int, repeat: int, cycle: float
+    ) -> None:
+        """turn_on_smooth_flashing.
+
+        Args:
+            r (int): Red (0-255)
+            g (int): Green (0-255)
+            b (int): Blue (0-255)
+            repeat (int): Number of repetitions (0: infinite)
+            cycle (float): Cycle of flashing [s]
+
+        Returns:
+            None:
+        """
+        assert self._cube is not None
+        cycle_ms = int(cycle * 1000)
+        await self._cube.api.indicator.smooth_flash(
+            repeat, cycle_ms, Color(r=r, g=g, b=b)
+        )
+
     async def turn_off_cube_lamp(self) -> None:
         assert self._cube is not None
         await self._cube.api.indicator.turn_off_all()
