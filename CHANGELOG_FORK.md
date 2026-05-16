@@ -7,7 +7,14 @@ For the upstream project changelog, see [CHANGELOG.md](./CHANGELOG.md).
 
 ### Added
 
-- Started independent fork distribution as `toio-py-fork` while keeping the import package name `toio`.
+- Added support for toio core cube technical specification v2.5.0:
+  - Added Speaker Mute settings: `SetSpeakerMute` (command 0x33) and `ResponseSpeakerMuteSettings` (response 0xB3).
+  - Added Configuration Reset: `ResetConfiguration` (command 0x0F) and `ResponseConfigurationReset` (response 0x8F).
+  - Added Remote Power Off: `RequestRemotePowerOff` (command 0x34) and `ResponseRemotePowerOff` (response 0xB4).
+  - Added Get Current Connection Interval: `GetCurrentConnectionIntervalValue` (command 0x32) and `ResponseGettingCurrentConnectionInterval` (response 0xB2).
+  - Added Smooth Indicator Flashing: `SmoothFlashing` (command 0x70).
+  - Integrated these features into `AsyncSimpleCube`.
+- Updated `SUPPORTED_MINOR_VERSION` to `5` in `ToioCoreCube`.
 - Added scanner scan strategies:
   - `strategy="best"` keeps scanning until timeout and returns the best sorted candidates.
   - `strategy="quick"` returns as soon as the requested number of cubes are found.

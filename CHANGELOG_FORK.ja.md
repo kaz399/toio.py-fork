@@ -7,6 +7,14 @@
 
 ### 追加
 
+- toioコアキューブ技術仕様 v2.5.0 で追加されたAPIへの対応を追加しました：
+  - スピーカー消音設定：`SetSpeakerMute` (command 0x33) および `ResponseSpeakerMuteSettings` (response 0xB3)。
+  - 保存した設定の初期化：`ResetConfiguration` (command 0x0F) および `ResponseConfigurationReset` (response 0x8F)。
+  - リモート電源オフ：`RequestRemotePowerOff` (command 0x34) および `ResponseRemotePowerOff` (response 0xB4)。
+  - 現在のコネクションインターバル値の取得：`GetCurrentConnectionIntervalValue` (command 0x32) および `ResponseGettingCurrentConnectionInterval` (response 0xB2)。
+  - ランプのなめらかな点滅：`SmoothFlashing` (command 0x70)。
+  - これらの機能を `AsyncSimpleCube` に統合しました。
+- `ToioCoreCube` の `SUPPORTED_MINOR_VERSION` を `5` に更新しました。
 - import package 名 `toio` は維持したまま、PyPI distribution 名を `toio-py-fork` とする独自 fork 配布を開始しました。
 - scanner に scan strategy を追加しました。
   - `strategy="best"` は timeout まで scan を続け、sort 後の最良候補を返します。
