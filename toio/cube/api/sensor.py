@@ -231,7 +231,7 @@ class PostureAngleHighPrecisionEulerData(CubeResponse):
     @staticmethod
     def is_myself(payload: GattReadData) -> bool:
         return (
-            payload[0] == PostureAngleEulerData._payload_id
+            payload[0] == PostureAngleHighPrecisionEulerData._payload_id
             and payload[1] == PostureDataType.HighPrecisionEuler
         )
 
@@ -322,7 +322,6 @@ class Sensor(CubeCharacteristic):
             return None
 
     def __init__(self, interface: CubeInterface, device: NotificationReceivedDevice):
-        self.interface = interface
         super().__init__(interface, ToioUuid.Sensor.value, device)
 
     async def read(self) -> Optional[SensorResponseType]:

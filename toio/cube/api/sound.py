@@ -277,11 +277,11 @@ class Sound(CubeCharacteristic):
     """
 
     @staticmethod
-    def is_my_data(_payload: GattReadData) -> None:
+    def is_my_data(payload: GattReadData) -> None:
+        _ = payload
         return None
 
     def __init__(self, interface: CubeInterface, device: NotificationReceivedDevice):
-        self.interface = interface
         super().__init__(interface, ToioUuid.Sound.value, device)
 
     async def play_sound_effect(self, sound_id: SoundId, volume: int):
