@@ -58,8 +58,8 @@ class StandardId(CubeResponse):
     _converter = struct.Struct("<BLH")
 
     @staticmethod
-    def is_myself(data: GattReadData) -> bool:
-        return data[0] == StandardId._payload_id
+    def is_myself(payload: GattReadData) -> bool:
+        return payload[0] == StandardId._payload_id
 
     def __init__(self, payload: GattReadData):
         if StandardId.is_myself(payload):
@@ -83,8 +83,8 @@ class PositionIdMissed(CubeResponse):
     _converter = struct.Struct("<B")
 
     @staticmethod
-    def is_myself(data: GattReadData) -> bool:
-        return data[0] == PositionIdMissed._payload_id
+    def is_myself(payload: GattReadData) -> bool:
+        return payload[0] == PositionIdMissed._payload_id
 
     def __init__(self, payload: GattReadData):
         if PositionIdMissed.is_myself(payload):
@@ -108,8 +108,8 @@ class StandardIdMissed(CubeResponse):
     _converter = struct.Struct("<B")
 
     @staticmethod
-    def is_myself(data: GattReadData) -> bool:
-        return data[0] == StandardIdMissed._payload_id
+    def is_myself(payload: GattReadData) -> bool:
+        return payload[0] == StandardIdMissed._payload_id
 
     def __init__(self, payload: GattReadData):
         if StandardIdMissed.is_myself(payload):
