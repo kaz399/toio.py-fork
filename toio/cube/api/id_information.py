@@ -151,7 +151,6 @@ class IdInformation(CubeCharacteristic):
             return None
 
     def __init__(self, interface: CubeInterface, device: NotificationReceivedDevice):
-        self.interface = interface
         super().__init__(interface, ToioUuid.Id.value, device)
 
     async def read(self) -> Optional[IdInformationResponseType]:
