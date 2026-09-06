@@ -20,7 +20,7 @@ import pprint
 from logging import getLogger
 
 import pytest
-from _cubes import CUBES
+from tests._cubes import CUBES
 
 from toio.scanner import BLEScanner
 
