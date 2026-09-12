@@ -158,6 +158,38 @@ class TurnOff(CubeCommand):
         return self._converter.pack(self._payload_id, 0x01, self.indicator_id)
 
 
+class SmoothFlashing(CubeCommand):
+    """
+    Smooth indicator flashing command
+
+    References:
+        https://toio.github.io/toio-spec/docs/ble_light/#%E3%81%AA%E3%82%81%E3%82%89%E3%81%8B%E3%81%AA%E7%82%B9%E6%BB%85
+    """
+
+    _payload_id = 0x70
+    _converter = struct.Struct("<BBBBBBBB")
+    REPEAT_INFINITE = 0
+    """Repeat until the indicator is turned off"""
+    CYCLE_UNIT_MS = 10
+    """Millisecond per cycle unit"""
+
+    def __init__(self, repeat: int, cycle_ms: int, color: Color):
+        self.repeat = repeat
+        self.cycle_ms = cycle_ms
+        self.color = color
+
+    def __bytes__(self) -> bytes:
+        cycle = clip(int(self.cycle_ms / self.CYCLE_UNIT_MS), 0, 255)
+        return self._converter.pack(
+            self._payload_id,
+            clip(self.repeat, 0, 255),
+            0x01,
+            0x01,
+            cycle,
+            *self.color.flatten(),
+        )
+
+
 class Indicator(CubeCharacteristic):
     """
     Indicator characteristic
@@ -237,3 +269,25 @@ class Indicator(CubeCharacteristic):
         """
         turn_off = TurnOff(indicator_id)
         await self._write(bytes(turn_off))
+
+    async def smooth_flash(
+        self, repeat: int, cycle_ms: int, color: Union[Color, Sequence[int]]
+    ) -> None:
+        """
+        Send smooth indicator flashing command
+
+        Args:
+            repeat (int): Number of repetitions (0: infinite, 1 - 255: count)
+            cycle_ms (int): | Cycle of flashing:
+                |     Any fraction less than 10ms will be truncated.
+                |     0 - 9: no flashing
+                |     10 - 2550: cycle [ms]
+            color (Union[Color, Sequence[int]]): Indicator color
+
+        References:
+            https://toio.github.io/toio-spec/en/docs/ble_light#smooth-flashing
+        """
+        if isinstance(color, Sequence):
+            color = Color(*color)
+        command = SmoothFlashing(repeat, cycle_ms, color)
+        await self._write(bytes(command))
