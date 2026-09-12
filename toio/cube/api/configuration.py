@@ -91,6 +91,28 @@ class SetDoubleTapDetectionTimeInterval(CubeCommand):
         return bytes((self._payload_id, 0x00, self.threshold))
 
 
+class ResetConfiguration(CubeCommand):
+    """
+    Reset configuration command
+
+    Note:
+        The official technical specification (v2.5.0) states that this command
+        is 1 byte long (0x0F only), but testing with actual devices has shown
+        that it requires 2 bytes (0x0F 0x00) to function correctly.
+
+    References:
+        https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96
+    """
+
+    _payload_id = 0x0F
+
+    def __init__(self) -> None:
+        pass
+
+    def __bytes__(self) -> bytes:
+        return bytes((self._payload_id, 0x00))
+
+
 class NotificationCondition(IntEnum):
     """
     Notification conditions of ID notification
@@ -453,6 +475,35 @@ class ProtocolVersion(CubeResponse):
         return pprint.pformat(vars(self))
 
 
+class ResponseConfigurationReset(CubeResponse):
+    """
+    Configuration reset response
+
+    Attributes:
+        result (bool): Result of the command
+
+    References:
+        https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96%E3%81%AE%E5%BF%9C%E7%AD%94
+    """
+
+    _payload_id = 0x8F
+    _converter = struct.Struct("<BBB")
+
+    @staticmethod
+    def is_myself(payload: GattReadData) -> bool:
+        return payload[0] == ResponseConfigurationReset._payload_id
+
+    def __init__(self, payload: GattReadData):
+        if ResponseConfigurationReset.is_myself(payload):
+            _, _, result = self._converter.unpack_from(payload)
+            self.result = result == 0x00
+        else:
+            raise TypeError("wrong payload")
+
+    def __str__(self) -> str:
+        return pprint.pformat(vars(self))
+
+
 class ResponseIdNotificationSettings(CubeResponse):
     """
     ID notification setting response
@@ -721,6 +772,7 @@ class ResponseSpeakerMuteSettings(CubeResponse):
 
 ConfigurationResponseType: TypeAlias = Union[
     ProtocolVersion,
+    ResponseConfigurationReset,
     ResponseIdNotificationSettings,
     ResponseIdMissedNotificationSettings,
     ResponseMagneticSensorSettings,
@@ -748,6 +800,8 @@ class Configuration(CubeCharacteristic):
     def is_my_data(payload: GattReadData) -> Optional[ConfigurationResponseType]:
         if ProtocolVersion.is_myself(payload):
             return ProtocolVersion(payload)
+        elif ResponseConfigurationReset.is_myself(payload):
+            return ResponseConfigurationReset(payload)
         elif ResponseIdNotificationSettings.is_myself(payload):
             return ResponseIdNotificationSettings(payload)
         elif ResponseIdMissedNotificationSettings.is_myself(payload):
@@ -999,4 +1053,20 @@ class Configuration(CubeCharacteristic):
             https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A
         """
         command = SetSpeakerMute(mute)
+        await self._write(bytes(command))
+
+    async def reset_configuration(self) -> None:
+        """
+        Send configuration reset command
+
+        This function DO NOT return response payload.
+        Receive the result by notification.
+
+        Note:
+            To write this setting, the function button must be pressed.
+
+        References:
+            https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96
+        """
+        command = ResetConfiguration()
         await self._write(bytes(command))
