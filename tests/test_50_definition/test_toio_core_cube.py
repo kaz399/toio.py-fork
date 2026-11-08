@@ -31,7 +31,13 @@ class TrackingDummyCube(DummyCube):
         return True
 
     async def read(self, char_uuid):
-        return bytearray((0x81, 0x00)) + bytearray(b"2.4.0")
+        # Report the protocol version the library targets, so bumping
+        # SUPPORTED_MINOR_VERSION does not make connect() warn here.
+        version = "%d.%d.0" % (
+            ToioCoreCube.SUPPORTED_MAJOR_VERSION,
+            ToioCoreCube.SUPPORTED_MINOR_VERSION,
+        )
+        return bytearray((0x81, 0x00)) + version.encode()
 
 
 @pytest.mark.asyncio

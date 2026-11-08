@@ -29,6 +29,8 @@
   - `best` / `quick` の scanner strategy 動作。
   - `CubeInfo` からの `ToioCoreCube` 初期化。
 - この fork 専用の changelog を追加しました。
+- `objc_util` のスタブを使う、Pythonista3 向け CoreBluetooth バックエンドの definition テストを追加しました。
+- scanner strategy と、`CubeInfo` からの `ToioCoreCube` 初期化の実機テストを追加しました。
 
 ### 変更
 
@@ -41,6 +43,8 @@
 - Bleak の requirement を `bleak>=3,<4` に更新しました。
 - development dependency group から Poetry 自体を削除しました。
 - uv ベースの project layout に合わせて tests と tooling metadata を更新しました。
+- Pythonista3 向け CoreBluetooth バックエンドを Bleak 3 に対応させました。service、characteristic、descriptor のラッパーと KVO の監視を削除し、Bleak 3 の接続、スキャナ、エラーの API に合わせています。
+- Pythonista3 用インストーラが `toio-py-fork` と Bleak 3.0.2 をインストールし、サンプルを `toio.py-fork` のドキュメントサイトから取得するようにしました。
 
 ### 修正
 
@@ -56,6 +60,11 @@
 - README sample の古い argument や末尾の不要な空行を修正しました。
 - definition-only test 実行時に、実機 cube の setup を skip するよう修正しました。
 - `_cubes.py` を生成する test helper command で、正しい script path を使い path を安全に quote するよう修正しました。
+- 削除済みの `_RawAdvData` を import していた WinRT の古い回避コードを削除し、Bleak 3 の Windows でスキャンできるよう修正しました。
+- `BleCube.connected` が常に `bool` を保持するよう修正しました。
+- `_cubes.py` を再生成する実機テストの実行で、前回ではなく再生成後のキューブ一覧を使うよう修正しました。
+- Windows での `_cubes.py` の生成を修正しました。
+- 通常の `pytest` の実行が同名モジュールで止まらないよう、対話型の savable configuration テストの名前を変更しました。
 
 ### ドキュメント
 

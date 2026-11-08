@@ -101,7 +101,7 @@ class ResetConfiguration(CubeCommand):
         that it requires 2 bytes (0x0F 0x00) to function correctly.
 
     References:
-        https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96
+        https://toio.github.io/toio-spec/en/docs/ble_persistent_configuration#initializing-saved-settings
     """
 
     _payload_id = 0x0F
@@ -427,7 +427,7 @@ class SetSpeakerMute(CubeCommand):
     Speaker mute setting command
 
     References:
-        https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A
+        https://toio.github.io/toio-spec/en/docs/ble_persistent_configuration#speaker-mute-settings
     """
 
     _payload_id = 0x33
@@ -444,7 +444,7 @@ class RequestRemotePowerOff(CubeCommand):
     Request remote power off command
 
     References:
-        https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82
+        https://toio.github.io/toio-spec/en/docs/ble_configuration#request-for-remote-power-off
     """
 
     _payload_id = 0x34
@@ -500,7 +500,7 @@ class ResponseConfigurationReset(CubeResponse):
         result (bool): Result of the command
 
     References:
-        https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96%E3%81%AE%E5%BF%9C%E7%AD%94
+        https://toio.github.io/toio-spec/en/docs/ble_persistent_configuration#responses-to-initialize-saved-settings
     """
 
     _payload_id = 0x8F
@@ -766,7 +766,7 @@ class ResponseSpeakerMuteSettings(CubeResponse):
         result (bool): Result of the command
 
     References:
-        https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%BF%9C%E7%AD%94
+        https://toio.github.io/toio-spec/en/docs/ble_persistent_configuration#responses-to-speaker-mute-settings
     """
 
     _payload_id = 0xB3
@@ -795,7 +795,7 @@ class ResponseRemotePowerOff(CubeResponse):
         result (bool): result
 
     References:
-        https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82%E3%81%AE%E5%BF%9C%E7%AD%94
+        https://toio.github.io/toio-spec/en/docs/ble_configuration#responses-to-request-for-remote-power-off
     """
 
     _payload_id = 0xB4
@@ -1095,7 +1095,7 @@ class Configuration(CubeCharacteristic):
             time_s (int): time until power off [s]
 
         References:
-            https://toio.github.io/toio-spec/docs/ble_configuration/#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E9%9B%BB%E6%BA%90%E3%82%AA%E3%83%95%E3%81%AE%E8%A6%81%E6%B1%82
+            https://toio.github.io/toio-spec/en/docs/ble_configuration#request-for-remote-power-off
         """
         command = RequestRemotePowerOff(time_s)
         await self._write(bytes(command))
@@ -1114,7 +1114,7 @@ class Configuration(CubeCharacteristic):
             mute (SpeakerMute): Mute setting
 
         References:
-            https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E6%B6%88%E9%9F%B3%E3%81%AE%E8%A8%AD%E5%AE%9A
+            https://toio.github.io/toio-spec/en/docs/ble_persistent_configuration#speaker-mute-settings
         """
         command = SetSpeakerMute(mute)
         await self._write(bytes(command))
@@ -1130,7 +1130,7 @@ class Configuration(CubeCharacteristic):
             To write this setting, the function button must be pressed.
 
         References:
-            https://toio.github.io/toio-spec/docs/ble_savable_configuration/#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96
+            https://toio.github.io/toio-spec/en/docs/ble_persistent_configuration#initializing-saved-settings
         """
         command = ResetConfiguration()
         await self._write(bytes(command))

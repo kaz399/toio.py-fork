@@ -163,11 +163,15 @@ class SmoothFlashing(CubeCommand):
     Smooth indicator flashing command
 
     References:
-        https://toio.github.io/toio-spec/docs/ble_light/#%E3%81%AA%E3%82%81%E3%82%89%E3%81%8B%E3%81%AA%E7%82%B9%E6%BB%85
+        https://toio.github.io/toio-spec/en/docs/ble_light#smooth-blinking
     """
 
     _payload_id = 0x70
     _converter = struct.Struct("<BBBBBBBB")
+    REPEAT_INFINITE = 0
+    """Blink infinitely"""
+    CYCLE_UNIT_MS = 10
+    """Millisecond per cycle unit"""
 
     def __init__(self, repeat: int, cycle_ms: int, color: Color):
         self.repeat = repeat
@@ -175,7 +179,7 @@ class SmoothFlashing(CubeCommand):
         self.color = color
 
     def __bytes__(self) -> bytes:
-        cycle = clip(int(self.cycle_ms / 10), 0, 255)
+        cycle = clip(int(self.cycle_ms / self.CYCLE_UNIT_MS), 0, 255)
         return self._converter.pack(
             self._payload_id,
             clip(self.repeat, 0, 255),
@@ -272,12 +276,15 @@ class Indicator(CubeCharacteristic):
         Send smooth indicator flashing command
 
         Args:
-            repeat (int): Number of repetitions (0: infinite)
-            cycle_ms (int): Cycle of flashing [ms]
+            repeat (int): Number of blinks (0: infinite, 1 - 255: count)
+            cycle_ms (int): | Cycle from smoothly turning on to smoothly turning off:
+                |     Any fraction less than 10ms will be truncated.
+                |     0 - 99: invalid setting
+                |     100 - 2550: cycle [ms]
             color (Union[Color, Sequence[int]]): Indicator color
 
         References:
-            https://toio.github.io/toio-spec/en/docs/ble_light#smooth-flashing
+            https://toio.github.io/toio-spec/en/docs/ble_light#smooth-blinking
         """
         if isinstance(color, Sequence):
             color = Color(*color)

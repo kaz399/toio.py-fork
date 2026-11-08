@@ -194,7 +194,8 @@ class ToioCoreCube(CubeInterface):
         """
         Initialize a ToioCoreCube instance.
 
-        When keyword arguments are specified, they are passed to the scanner's scan() function.
+        When keyword arguments are specified, they are passed to the
+        scanner's scan() function.
 
         Example:
             >>> async with ToioCoreCube(strategy="quick") as cube:

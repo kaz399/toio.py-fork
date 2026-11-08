@@ -102,7 +102,9 @@ async def test_indicator_smooth_flash():
     await cube.connect()
     print("** CONNECTED")
     print("** LED SMOOTH FLASH #00FF40 (repeat 5, cycle 1s)")
-    await cube.api.indicator.smooth_flash(repeat=5, cycle_ms=1000, color=(0x00, 0xFF, 0x40))
+    await cube.api.indicator.smooth_flash(
+        repeat=5, cycle_ms=1000, color=(0x00, 0xFF, 0x40)
+    )
     await asyncio.sleep(10)
     print("** DISCONNECT")
     await cube.disconnect()

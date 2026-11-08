@@ -60,7 +60,9 @@ async def test_base_ble_scanner_strategy_best_collects_until_timeout(mocker):
     mocker.patch("toio.device_interface.ble.BleCube", side_effect=lambda device: device)
 
     scanner = BaseBleScanner()
-    cubes = await scanner._scan(num=2, sort="rssi", timeout=0.07, strategy="best")
+    # Far above the 0.06 s the three detections need: Windows timer granularity
+    # can stretch each 0.02 s sleep, and a tight timeout drops the last cube.
+    cubes = await scanner._scan(num=2, sort="rssi", timeout=0.5, strategy="best")
 
     assert [cube.device.address for cube in cubes] == ["A3", "A2"]
 
@@ -76,7 +78,7 @@ async def test_base_ble_scanner_strategy_quick_returns_early(mocker):
     mocker.patch("toio.device_interface.ble.BleCube", side_effect=lambda device: device)
 
     scanner = BaseBleScanner()
-    cubes = await scanner._scan(num=2, sort="rssi", timeout=0.07, strategy="quick")
+    cubes = await scanner._scan(num=2, sort="rssi", timeout=0.5, strategy="quick")
 
     assert [cube.device.address for cube in cubes] == ["A2", "A1"]
 
