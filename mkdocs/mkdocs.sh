@@ -46,4 +46,7 @@ pushd examples-simple
 ln -s ../../examples-simple/*.py .
 popd
 ../pythonista3/make_install_script.sh install_toio.py
+# The version pages link to ./install_toio.py, so the installer also has to be
+# next to them, not only at the top of the site.
+cp install_toio.py "${LATEST}/install_toio.py"
 popd
