@@ -11,7 +11,6 @@ BLE device interface
 """
 
 import asyncio
-import platform
 import sys
 from typing import Dict, List, Optional, Set, Type, Union
 from uuid import UUID
@@ -67,15 +66,6 @@ class BleCube(CubeInterface):
 
     def __init__(self, device: Union[CubeDevice, str]):
         self.connected: bool = False
-        if platform.system() == "Windows":
-            from bleak.backends.winrt.scanner import _RawAdvData
-
-            if isinstance(device, CubeDevice):
-                if device.details.adv is None:
-                    device.details = _RawAdvData(
-                        device.details.scan, device.details.scan
-                    )
-                    logger.info("copy scan to adv")
         self.device = BleakClient(device, backend=_get_platform_client_backend_type())
 
     async def __aenter__(self):
@@ -166,6 +156,8 @@ class BaseBleScanner(ScannerInterface):
 
             Ref: https://support.toio.io/s/article/15855
         """
+        # ScanStrategy is a Literal, which only type checkers enforce, so an
+        # unknown value has to be rejected here as well.
         if strategy not in ("best", "quick"):
             raise ValueError("wrong strategy: " + str(strategy))
 

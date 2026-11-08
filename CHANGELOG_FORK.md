@@ -28,6 +28,8 @@ For the upstream project changelog, see [CHANGELOG.md](./CHANGELOG.md).
   - Scanner strategy behavior for `best` and `quick`.
   - `ToioCoreCube` initialization from `CubeInfo`.
 - Added this fork-specific changelog.
+- Added definition-level tests for the Pythonista3 CoreBluetooth backend, using an `objc_util` stub.
+- Added real-cube tests for the scanner strategies and for `ToioCoreCube` initialization from `CubeInfo`.
 
 ### Changed
 
@@ -40,6 +42,8 @@ For the upstream project changelog, see [CHANGELOG.md](./CHANGELOG.md).
 - Updated the Bleak requirement to `bleak>=3,<4`.
 - Removed Poetry itself from the development dependency group.
 - Updated tests and tooling metadata for the uv-based project layout.
+- Updated the Pythonista3 CoreBluetooth backend for Bleak 3: removed its service, characteristic and descriptor wrappers and its KVO observer, and followed the Bleak 3 connection, scanner and error APIs.
+- Changed the Pythonista3 installer to install `toio-py-fork` and Bleak 3.0.2, and to download the examples from the `toio.py-fork` documentation site.
 
 ### Fixed
 
@@ -55,6 +59,11 @@ For the upstream project changelog, see [CHANGELOG.md](./CHANGELOG.md).
 - Fixed README sample cleanup issues, including outdated arguments and trailing blank lines.
 - Fixed definition-only test runs so they skip physical cube setup.
 - Fixed the test helper command that generates `_cubes.py` to use the correct script path and safely quote paths.
+- Fixed scanning on Windows with Bleak 3 by removing the obsolete WinRT advertisement workaround, which imported the removed `_RawAdvData`.
+- Fixed `BleCube.connected` to always hold a `bool`.
+- Fixed hardware test runs that regenerate `_cubes.py` so that they use the regenerated cube list instead of the previous one.
+- Fixed the generation of `_cubes.py` on Windows.
+- Renamed the interactive savable configuration test so that a plain `pytest` run does not stop on a duplicate module name.
 
 ### Documentation
 

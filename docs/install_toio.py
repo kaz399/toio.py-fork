@@ -13,10 +13,6 @@ import shutil
 import sys
 import zipfile
 
-import requests
-
-from packaging.version import Version, parse
-
 site_packages_dir = ""
 DEVELOPMENT_MODE = False
 
@@ -29,14 +25,20 @@ if sys.platform != "ios":
     else:
         exit(1)
 
+# Imported here so that an unsupported platform gets the message above, not an
+# ImportError.
+import requests
+
+from packaging.version import Version, parse
+
 
 def get_latest_toio_py(min="1.1.0a1", max="1.2.0"):
     min_ver = parse(min)
     max_ver = parse(max)
     latest = Version("0.0.0")
     found_specified_version = False
-    query = "https://pypi.org/pypi/toio-py/json"
-    # query = "https://test.pypi.org/pypi/toio-py/json"
+    query = "https://pypi.org/pypi/toio-py-fork/json"
+    # query = "https://test.pypi.org/pypi/toio-py-fork/json"
     result = requests.get(query).json()
     # search latest version
     releases = result["releases"]
@@ -59,47 +61,80 @@ def get_latest_toio_py(min="1.1.0a1", max="1.2.0"):
                 fetch_url = True
             if fetch_url and key == "url":
                 return value
+    print("wheel of toio.py %s is not found" % latest)
+    return None
+
+
+TOIO_PY_WHL = get_latest_toio_py()
+if TOIO_PY_WHL is None:
+    # Stop before the cleanup, which would remove the working installation.
+    print("installation is cancelled: nothing has been changed")
+    exit(1)
 
 REQUIRED_WHLS = (
     "https://files.pythonhosted.org/packages/01/f3/936e209267d6ef7510322191003885de524fc48d1b43269810cd589ceaf5/typing_extensions-4.11.0-py3-none-any.whl",
-    "https://files.pythonhosted.org/packages/ac/c8/576a25c20d5619576a82b6ec28df9f1d4c867e4fe801531f7d9bb9f49db7/bleak-0.22.1-py3-none-any.whl",
-    get_latest_toio_py()
+    "https://files.pythonhosted.org/packages/26/54/05aceb9cd80073805b3ed8522e3196e8cb22f70e741873fa51406c31f4e7/bleak-3.0.2-py3-none-any.whl",
+    TOIO_PY_WHL,
 )
 
 CLEANUP_TARGETS = (
     "typing_extensions",
     "bleak",
     "toio",
+    "toio_py",
+    "toio_py_fork",
 )
 
 EXAMPLES = (
-   "https://toio.github.io/toio.py/examples/async_gather_multi.py",
-   "https://toio.github.io/toio.py/examples/async_gather.py",
-   "https://toio.github.io/toio.py/examples/async_task_group.py",
-   "https://toio.github.io/toio.py/examples/detect_mat.py",
-   "https://toio.github.io/toio.py/examples/motor_control.py",
-   "https://toio.github.io/toio.py/examples/multi_cubes_with_attribute.py",
-   "https://toio.github.io/toio.py/examples/multi_cubes_with_named.py",
-   "https://toio.github.io/toio.py/examples/read_position.py",
-   "https://toio.github.io/toio.py/examples/scan_and_connect.py",
-   "https://toio.github.io/toio.py/examples/tutorial_pursuer.py",
+   "https://kaz399.github.io/toio.py-fork/examples/async_gather_multi.py",
+   "https://kaz399.github.io/toio.py-fork/examples/async_gather.py",
+   "https://kaz399.github.io/toio.py-fork/examples/async_task_group.py",
+   "https://kaz399.github.io/toio.py-fork/examples/detect_mat.py",
+   "https://kaz399.github.io/toio.py-fork/examples/motor_control.py",
+   "https://kaz399.github.io/toio.py-fork/examples/multi_cubes_with_attribute.py",
+   "https://kaz399.github.io/toio.py-fork/examples/multi_cubes_with_named.py",
+   "https://kaz399.github.io/toio.py-fork/examples/read_position.py",
+   "https://kaz399.github.io/toio.py-fork/examples/scan_and_connect.py",
+   "https://kaz399.github.io/toio.py-fork/examples/tutorial_pursuer.py",
 )
 
 EXAMPLES_SIMPLE = (
-   "https://toio.github.io/toio.py/examples-simple/angle_control.py",
-   "https://toio.github.io/toio.py/examples-simple/basic_motor_control.py",
-   "https://toio.github.io/toio.py/examples-simple/concurrent_futures_simple.py",
-   "https://toio.github.io/toio.py/examples-simple/get_current_grid.py",
-   "https://toio.github.io/toio.py/examples-simple/get_information_1.py",
-   "https://toio.github.io/toio.py/examples-simple/get_information_2.py",
-   "https://toio.github.io/toio.py/examples-simple/get_standard_id.py",
-   "https://toio.github.io/toio.py/examples-simple/goto_a_gird.py",
-   "https://toio.github.io/toio.py/examples-simple/lamp.py",
-   "https://toio.github.io/toio.py/examples-simple/move_to.py",
-   "https://toio.github.io/toio.py/examples-simple/multi_cubes_async_simple.py",
-   "https://toio.github.io/toio.py/examples-simple/sound.py",
-   "https://toio.github.io/toio.py/examples-simple/step.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/angle_control.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/basic_motor_control.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/concurrent_futures_simple.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/get_current_grid.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/get_information_1.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/get_information_2.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/get_standard_id.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/goto_a_gird.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/lamp.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/move_to.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/multi_cubes_async_simple.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/sound.py",
+   "https://kaz399.github.io/toio.py-fork/examples-simple/step.py",
 )
+
+
+
+def is_cleanup_target(filename):
+    # Compare the whole name: other packages may have "toio" in their names.
+    # "bleak-3.0.2.dist-info" and "typing_extensions.py" have the suffix removed.
+    return filename.split("-")[0].split(".")[0] in CLEANUP_TARGETS
+
+
+def install_examples(urls, directory, description):
+    os.makedirs(directory, exist_ok=True)
+    for url in urls:
+        filename = url.split("/")[-1]
+        path = os.path.join(directory, filename)
+        # An existing file is kept because the user may have edited it.
+        if os.path.exists(path):
+            print("SKIP: %s is already installed" % filename)
+            continue
+        print("install %s: %s" % (description, filename))
+        data = requests.get(url).content
+        with open(path, "wb") as wfh:
+            wfh.write(data)
 
 
 if not DEVELOPMENT_MODE:
@@ -123,44 +158,24 @@ print("------------------------------------------------------------")
 os.makedirs(site_packages_dir, exist_ok=True)
 print("clean previous installation")
 for filename in os.listdir(site_packages_dir):
-    for cleanup in CLEANUP_TARGETS:
-        if cleanup in filename:
-            print("clean: %s" % filename)
-            remove_target = os.path.normpath(os.path.join(site_packages_dir, filename))
-            if os.path.isdir(remove_target):
-                shutil.rmtree(remove_target)
-            else:
-                os.remove(remove_target)
+    if is_cleanup_target(filename):
+        print("clean: %s" % filename)
+        remove_target = os.path.normpath(os.path.join(site_packages_dir, filename))
+        if os.path.isdir(remove_target):
+            shutil.rmtree(remove_target)
+        else:
+            os.remove(remove_target)
 print("------------------------------------------------------------")
 print("install packages")
 for whl in REQUIRED_WHLS:
-    if whl is not None:
-        print("install module: %s" % whl.split("/")[-1])
-        zipfile.ZipFile(io.BytesIO(requests.get(whl).content)).extractall(site_packages_dir)
+    print("install module: %s" % whl.split("/")[-1])
+    zipfile.ZipFile(io.BytesIO(requests.get(whl).content)).extractall(site_packages_dir)
 print("------------------------------------------------------------")
 print("install examples")
-if not os.path.isdir(examples_dir):
-    os.makedirs(examples_dir, exist_ok=True)
-    for example in EXAMPLES:
-        filename = example.split("/")[-1]
-        print("install toio.py example: %s" % filename)
-        data = requests.get(example).content
-        with open(os.path.join(examples_dir, filename), "wb") as wfh:
-            wfh.write(data)
-else:
-    print("SKIP: example files are already installed")
+install_examples(EXAMPLES, examples_dir, "toio.py example")
 print("------------------------------------------------------------")
 print("install examples-simple")
-if not os.path.isdir(examples_simple_dir):
-    os.makedirs(examples_simple_dir, exist_ok=True)
-    for example in EXAMPLES_SIMPLE:
-        filename = example.split("/")[-1]
-        print("install toio.py example (simple API): %s" % filename)
-        data = requests.get(example).content
-        with open(os.path.join(examples_simple_dir, filename), "wb") as wfh:
-            wfh.write(data)
-else:
-    print("SKIP: example files are already installed")
+install_examples(EXAMPLES_SIMPLE, examples_simple_dir, "toio.py example (simple API)")
 print("------------------------------------------------------------")
 print("install completed")
 print("")

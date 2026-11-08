@@ -277,8 +277,7 @@ class Sound(CubeCharacteristic):
     """
 
     @staticmethod
-    def is_my_data(payload: GattReadData) -> None:
-        _ = payload
+    def is_my_data(_payload: GattReadData) -> None:
         return None
 
     def __init__(self, interface: CubeInterface, device: NotificationReceivedDevice):

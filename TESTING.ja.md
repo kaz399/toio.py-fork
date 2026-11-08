@@ -79,9 +79,12 @@ uv run coverage report
 主な確認内容:
 
 - mock した Bleak client を使った BLE connection state handling。
-- collision detection threshold command を含む configuration command byte の生成。
-- `best` と `quick` の scanner strategy 動作。
+- collision detection threshold command を含む configuration および indicator command の
+  byte 生成と response の parse。
+- `best` と `quick` の scanner strategy 動作と、cube initializer が受け付ける
+  scanner のキーワード引数。
 - `CubeInfo` からの `ToioCoreCube` 初期化。
+- 姿勢角 notification の sensor payload dispatch。
 - BLE hardware なしで確認できる definition や import-level の挙動。
 
 CI やローカルでの regression check では、このテストグループを最初に実行するのが安全です。
@@ -106,6 +109,7 @@ CI やローカルでの regression check では、このテストグループ�
 主な確認内容:
 
 - 複数 cube がある場合の scanner behavior。
+- `best` と `quick` の scan strategy とそのタイミング。
 - RSSI と local name による sort。
 - cube ID と BLE address による scan。
 - scan 結果からの `ToioCoreCube` instance 作成。
@@ -388,7 +392,8 @@ cube button を押さないでください。button press は中断扱いにな�
 ### `tests/test_11_cube_off`
 
 特定の cube だけが電源 ON の状態での cube discovery behavior を確認する hardware test
-です。手動で cube の電源状態を操作する必要があります。
+です。remote power off command で片方の cube の電源を落とすため、開始時には 2 台の
+cube の電源を入れておく必要があります。
 
 ## Cube 設定ファイル
 

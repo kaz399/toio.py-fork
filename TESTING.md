@@ -80,10 +80,12 @@ Definition-level tests that do not require physical cubes.
 Coverage includes:
 
 - BLE connection state handling with mocked Bleak clients.
-- Configuration command byte generation, including collision detection
-  threshold commands.
-- Scanner strategy behavior for `best` and `quick`.
+- Command byte generation and response parsing for the configuration and
+  indicator commands, including the collision detection threshold command.
+- Scanner strategy behavior for `best` and `quick`, and the scanner keyword
+  arguments accepted by the cube initializers.
 - `ToioCoreCube` initialization from `CubeInfo`.
+- Sensor payload dispatch for the posture angle notifications.
 - Definition and import-level behavior that can be checked without BLE
   hardware.
 
@@ -109,6 +111,7 @@ Two-cube hardware tests.
 Coverage includes:
 
 - Scanner behavior with multiple cubes.
+- Scan strategies `best` and `quick`, including their timing.
 - Sorting by RSSI and local name.
 - Scanning by cube ID and BLE address.
 - Creating one or more `ToioCoreCube` instances from scanned cube data.
@@ -422,7 +425,8 @@ connected.
 ### `tests/test_11_cube_off`
 
 Hardware tests for cube discovery behavior when only selected cubes are powered
-on. These tests require manual cube power-state control.
+on. The test powers one cube down through the remote power off command, so two
+powered-on cubes are needed at the start of the run.
 
 ## Cube Configuration File
 

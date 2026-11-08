@@ -8,7 +8,9 @@
 # ************************************************************
 
 import os
-import shlex
+import runpy
+import subprocess
+import sys
 import time
 from pathlib import Path
 from logging import getLogger
@@ -17,6 +19,9 @@ import pytest
 from colorama import Back, Fore, Style, init
 
 logger = getLogger(__name__)
+
+DEFINITION_TEST_DIR = "test_50_definition"
+CUBE_FILE = os.path.join(os.path.dirname(__file__), "_cubes.py")
 
 
 @pytest.fixture(scope="function", autouse=True)
@@ -28,12 +33,12 @@ def wait():
 def setup(pytestconfig):
     init()
     capmanager = pytestconfig.pluginmanager.getplugin("capturemanager")
-    selected_paths = [
-        Path(arg)
-        for arg in pytestconfig.invocation_params.args
-        if not arg.startswith("-")
-    ]
-    if selected_paths and all("test_50_definition" in path.parts for path in selected_paths):
+    # config.args holds only the resolved test paths (or testpaths when the
+    # command line selects nothing). invocation_params.args cannot be used
+    # here because it also contains option values such as the
+    # "no:cacheprovider" of "-p no:cacheprovider".
+    selected = [Path(arg) for arg in pytestconfig.args]
+    if selected and all(DEFINITION_TEST_DIR in path.parts for path in selected):
         logger.info("** skip cube setup for definition-only tests")
         return
 
@@ -59,14 +64,11 @@ def setup(pytestconfig):
     capmanager.resume_global_capture()
     logger.info("%s", yn)
     test_dir = os.path.dirname(__file__)
-    cube_file = os.path.join(test_dir, "_cubes.py")
     make_cube_list = os.path.join(test_dir, "make_cube_list.py")
     if yn.lower() != "s":
         logger.info("** GENERATE _cubes.py")
-        result = os.system(
-            f"python {shlex.quote(make_cube_list)} {shlex.quote(cube_file)}"
-        )
-        if result:
+        result = subprocess.run([sys.executable, make_cube_list, CUBE_FILE])
+        if result.returncode:
             logger.info(
                 Fore.RED
                 + "** 2 cubes are not found. _cubes.py is not updated"
@@ -75,8 +77,16 @@ def setup(pytestconfig):
     else:
         logger.info(Fore.YELLOW + "** skip to generate _cubes.py" + Style.RESET_ALL)
     logger.info("** cubes used in this test:")
-    with open(cube_file, "r") as rf:
+    with open(CUBE_FILE, "r") as rf:
         logger.info("\n" + rf.read())
+
+
+@pytest.fixture(scope="session")
+def cubes(setup):
+    # Test modules must not import _cubes.py: they are imported during
+    # collection, before setup can regenerate the file, so they would keep
+    # the cubes of the previous run.
+    return runpy.run_path(CUBE_FILE)["CUBES"]
 
 
 @pytest.fixture(scope="function")
